@@ -1,0 +1,28 @@
+webtalk_init -webtalk_dir /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.hw/webtalk/
+webtalk_register_client -client project
+webtalk_add_data -client project -key date_generated -value "Tue Jul  3 16:17:07 2018" -context "software_version_and_target_device"
+webtalk_add_data -client project -key product_version -value "Vivado v2015.4 (64-bit)" -context "software_version_and_target_device"
+webtalk_add_data -client project -key build_version -value "1412921" -context "software_version_and_target_device"
+webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
+webtalk_add_data -client project -key registration_id -value "175612712_205625359_210670467_161" -context "software_version_and_target_device"
+webtalk_add_data -client project -key tool_flow -value "labtool" -context "software_version_and_target_device"
+webtalk_add_data -client project -key beta -value "FALSE" -context "software_version_and_target_device"
+webtalk_add_data -client project -key route_design -value "FALSE" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_family -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_device -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_package -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key random_id -value "0d109ce8-04a4-4265-a22c-db64491d4a96" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_id -value "1eba52a7-8137-4e17-a861-86f625b6ef92" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "2" -context "software_version_and_target_device"
+webtalk_add_data -client project -key os_name -value "Ubuntu" -context "user_environment"
+webtalk_add_data -client project -key os_release -value "Ubuntu 16.04.4 LTS" -context "user_environment"
+webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "2591.998 MHz" -context "user_environment"
+webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
+webtalk_add_data -client project -key system_ram -value "4.000 GB" -context "user_environment"
+webtalk_register_client -client labtool
+webtalk_add_data -client labtool -key pgmcnt -value "00:00:00" -context "labtool\\usage"
+webtalk_add_data -client labtool -key cable -value "" -context "labtool\\usage"
+webtalk_transmit -clientid 2057731789 -regid "175612712_205625359_210670467_161" -xml /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.hw/webtalk/usage_statistics_ext_labtool.xml -html /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.hw/webtalk/usage_statistics_ext_labtool.html -wdm /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
+webtalk_terminate

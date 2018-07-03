@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Mon Jul  2 22:08:26 2018
-# Process ID: 3759
+# Start of session at: Tue Jul  3 16:15:41 2018
+# Process ID: 10630
 # Current directory: /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb
 # Command line: vivado -mode batch -source /home/vivado/rfnoc/src/uhd-fpga/usrp3/tools/scripts/viv_sim_project.tcl -log xsim.log -nojournal
 # Log file: /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim.log
@@ -476,7 +476,7 @@ INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.sim/sim_1/behav'
 Vivado Simulator 2015.4
 Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 573e4984b7e54422ba7dbec5fb02e4cf --debug all --relax --mt 8 -d WORKING_DIR=/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb -L work -L unisims_ver -L unimacro_ver -L secureip --snapshot noc_block_latencytest_tb_behav work.noc_block_latencytest_tb work.glbl -log elaborate.log -timescale 1ns/1ns 
+Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto d110c5f5c09742cfa43af00a67a8c0b4 --debug all --relax --mt 8 -d WORKING_DIR=/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb -L work -L unisims_ver -L unimacro_ver -L secureip --snapshot noc_block_latencytest_tb_behav work.noc_block_latencytest_tb work.glbl -log elaborate.log -timescale 1ns/1ns 
 Using 8 slave threads.
 WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running fuse with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
     LIBRARY_PATH
@@ -591,8 +591,8 @@ Built simulation snapshot noc_block_latencytest_tb_behav
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
 source /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.sim/sim_1/behav/xsim.dir/noc_block_latencytest_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Jul  2 22:09:01 2018...
-run_program: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 911.535 ; gain = 0.000 ; free physical = 5346 ; free virtual = 8730
+INFO: [Common 17-206] Exiting Webtalk at Tue Jul  3 16:15:59 2018...
+run_program: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 911.527 ; gain = 0.000 ; free physical = 505 ; free virtual = 4205
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.sim/sim_1/behav'
 INFO: [USF-XSim-98] *** Running xsim
@@ -619,82 +619,82 @@ Connecting noc_block_latencytest (SID: 0:0) to noc_block_tb (SID: 1:0)
 [TEST CASE   5] (t=000006888) BEGIN: Test sequence...
 Star sending
 Info: rfnoc_block_streamer::push(): Sending partial packet with 2 words (type: SC16)
-Time: 6887500 ps  Iteration: 2  Process: xsim.dir/noc_block_latencytest_tb_behav/xsim.type/Block97_17481/send/Block289_48/Block303_49  File: /home/vivado/rfnoc/src/uhd-fpga/usrp3/sim/rfnoc/sim_rfnoc_lib.svh
+Time: 6887500 ps  Iteration: 2  Process: xsim.dir/noc_block_latencytest_tb_behav/xsim.type/Block97_17478/send/Block289_48/Block303_49  File: /home/vivado/rfnoc/src/uhd-fpga/usrp3/sim/rfnoc/sim_rfnoc_lib.svh
 Recive packet
 End sending
 00000000 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
-Payload information: 0000002e0000001d 
+Timestamp information: 00000578000d0015
+Payload information: abcd001d002ebeef 
 
 00000001 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000002 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000003 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000004 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000005 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000006 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000007 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000008 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 00000009 packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 0000000a packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 0000000b packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 0000000c packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 0000000d packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 0000000e packet
 Time flag information: has time  : 1
-Timestamp information: 0000000000000014
+Timestamp information: 00000578000d0015
 Payload information: xxxxxxxxxxxxxxxx 
 
 [TEST CASE   5] (t=000007318) DONE... Passed
@@ -709,7 +709,7 @@ Result: PASSED
 $finish called at time : 7400 ns : File "/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/noc_block_latencytest_tb.sv" Line 29
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'noc_block_latencytest_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000000000us
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 960.383 ; gain = 48.848 ; free physical = 5316 ; free virtual = 8710
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 960.375 ; gain = 48.848 ; free physical = 483 ; free virtual = 4185
 # if [string equal $vivado_mode "batch"] {
 #     puts "BUILDER: Closing project"
 #     close_project
@@ -723,5 +723,5 @@ BUILDER: Closing project
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
 source /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb/xsim_proj/xsim_proj.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Jul  2 22:09:06 2018...
-INFO: [Common 17-206] Exiting Vivado at Mon Jul  2 22:09:07 2018...
+INFO: [Common 17-206] Exiting Webtalk at Tue Jul  3 16:16:03 2018...
+INFO: [Common 17-206] Exiting Vivado at Tue Jul  3 16:16:04 2018...

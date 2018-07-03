@@ -64,37 +64,28 @@ module noc_block_latencytest #(
   wire [32:0] str_sink_tdata_temp;
   wire [32:0] m_axis_data_tdata_temp;
   wire [32:0] s_axis_data_tdata_temp;
+  wire [63:0] str_src_tdata_temp;
   wire [63:0] o_tdata_temp;
   reg [63:0] simple_counter = 64'h0;
   reg [63:0] simple_counter_shift32  = 64'h0;
 
   always @(posedge ce_clk ) begin 
-    if (i_tdata == 64'h00000000deadbeef) begin
+    if (i_tdata == 64'habcd0000deadbeef) begin
       simple_counter <= 64'h0;
     end else begin
       simple_counter <= simple_counter+1;
     end
   end
 
-  assign o_tdata = (o_tdata_temp == 64'h00000000deadbeef) ? {simple_counter[31:0],outcoming_axi_timestamp[31:0]} : o_tdata_temp;
-  
-  wire [63:0] i_tdata_temp;
-  wire  i_tlast_temp;
-  wire  i_tvalid_temp;
-  wire  i_tready_temp;
+  assign o_tdata = (o_tdata_temp[63:48] == 16'habcd) ?  {o_tdata_temp[63:32],simple_counter[15:0],o_tdata_temp[15:0] }:o_tdata_temp ;
+  assign str_src_tdata = (str_src_tdata_temp[63:48] == 16'habcd) ? {str_src_tdata_temp[63:48],simple_counter[15:0],str_src_tdata_temp[31:0]} :str_src_tdata_temp ;
 
-  /*
-  timestamper #(
-      .HEADER(2'b00),
-      .PACKET_LENGTH(64),
-      .TIME_LENGTH(64)
-    )timestamper_in_noc(
-      .clk(bus_clk),
-      .reset(bus_rst),
-      .i_tdata(i_tdata), .i_tlast(i_tlast), .i_tvalid(i_tvalid), .i_tready(i_tready),
-      .o_tdata(i_tdata_temp), .o_tlast(i_tlast_temp), .o_tvalid(i_tvalid_temp), .o_tready(i_tready_temp)
-    );
-  */
+
+  reg [63:0] incoming_ce_timestamp ;
+  always @(posedge i_tvalid) begin
+    incoming_ce_timestamp <= simple_counter;
+  end
+
   noc_shell #(
     .NOC_ID(NOC_ID),
     .STR_SINK_FIFOSIZE(STR_SINK_FIFOSIZE)
@@ -156,29 +147,12 @@ module noc_block_latencytest #(
       .output_packet(str_sink_tdata_temp)
     );
   */
-  always @( posedge ce_clk) begin
-    if(str_src_tdata == 64'hdeadbeef) begin
-      outcoming_axi_timestamp <= simple_counter;
-    end 
-  end
+  
 
-  always @( posedge ce_clk) begin
-    if(str_sink_tdata == 64'hdeadbeef) begin
+  always @( posedge str_sink_tvalid) begin
       incoming_axi_timestamp <= simple_counter;
-    end 
   end
   
-  always @( posedge ce_clk) begin
-    if(m_axis_data_tdata == 32'hdeadbeef) begin
-      incoming_ip_timestamp <= simple_counter;
-    end 
-  end
-
-  always @( posedge ce_clk) begin
-    if(s_axis_data_tdata == 32'hdeadbeef) begin
-      outcoming_ip_timestamp <= simple_counter;
-    end 
-  end
 
   axi_wrapper #(
     .SIMPLE_MODE(0))
@@ -188,7 +162,7 @@ module noc_block_latencytest #(
     .next_dst(next_dst_sid),
     .set_stb(set_stb), .set_addr(set_addr), .set_data(set_data),
     .i_tdata(str_sink_tdata), .i_tlast(str_sink_tlast), .i_tvalid(str_sink_tvalid), .i_tready(str_sink_tready),
-    .o_tdata(str_src_tdata), .o_tlast(str_src_tlast), .o_tvalid(str_src_tvalid), .o_tready(str_src_tready),
+    .o_tdata(str_src_tdata_temp), .o_tlast(str_src_tlast), .o_tvalid(str_src_tvalid), .o_tready(str_src_tready),
     .m_axis_data_tdata(m_axis_data_tdata),
     .m_axis_data_tlast(m_axis_data_tlast),
     .m_axis_data_tvalid(m_axis_data_tvalid),
@@ -293,12 +267,12 @@ module noc_block_latencytest #(
   
   wire eob = 1'b0;
   wire [15:0] packet_length = 16'h0;
-  reg [127:0] header_reg = 128'h0;
   reg [11:0] seqnum_cnt = 12'h0;
-  wire [127:0] header_wire = {2'b00,1'b1,eob,seqnum_cnt,packet_length, src_sid,next_dst_sid,simple_counter};
+  wire [63:0] header_wire = {2'b00,1'b1,eob,seqnum_cnt,packet_length, src_sid,next_dst_sid};
+  //reg [127:0] header_reg = 128'h0;
 
   
-
+  /*
   always @(posedge ce_clk or negedge ce_rst) begin
     if(ce_rst) begin
       header_reg <= 128'h0;
@@ -306,7 +280,7 @@ module noc_block_latencytest #(
       header_reg <= header_wire;
     end
   end
-
+  */
   
 
   
@@ -318,10 +292,12 @@ module noc_block_latencytest #(
       .clear_tx_seqnum(clear_tx_seqnum), 
       .m_axis_data_tlast(m_axis_data_tlast), .m_axis_data_tdata(m_axis_data_tdata),
       .m_axis_data_tvalid(m_axis_data_tvalid), .m_axis_data_tready(m_axis_data_tready),
-      .header_reg(header_reg),
+      .m_axis_data_tuser(),
       .s_axis_data_tlast(s_axis_data_tlast), .s_axis_data_tdata(s_axis_data_tdata),
       .s_axis_data_tvalid(s_axis_data_tvalid), .s_axis_data_tready(s_axis_data_tready),
-      .s_axis_data_tuser(s_axis_data_tuser)
+      .s_axis_data_tuser(s_axis_data_tuser),
+      .timer(simple_counter), .header(header_wire),
+      .incoming_axi_timestamp(incoming_axi_timestamp), .incoming_ce_timestamp(incoming_ce_timestamp)
     );
   
  
@@ -374,10 +350,12 @@ module shiftRegiste_4 #(
     input  reset, input  clk, input  clear_tx_seqnum, 
     input  m_axis_data_tlast, input  [31:0] m_axis_data_tdata,
     input  m_axis_data_tvalid, output  m_axis_data_tready,
-    input  [127:0] header_reg,
+    input  [127:0] m_axis_data_tuser,
     output  s_axis_data_tlast, output  [31:0] s_axis_data_tdata,
     output  s_axis_data_tvalid, input  s_axis_data_tready,
-    output  [127:0] s_axis_data_tuser
+    output  [127:0] s_axis_data_tuser,
+    input  [63:0] timer,input [63:0] header,
+    input  [63:0] incoming_axi_timestamp, input [63:0] incoming_ce_timestamp
   );
   //Axi_fifo_interface wire
   wire [31:0] pipe_in_tdata;
@@ -388,8 +366,7 @@ module shiftRegiste_4 #(
   wire pipe_out_tvalid, pipe_out_tlast;
   wire pipe_out_tready;
   wire [127:0] pipe_out_tuser;
-
-
+  
   reg [PACKET_LENGTH+1 :0 ] reg1;
   reg [PACKET_LENGTH+1 :0 ] reg2;
   reg [PACKET_LENGTH+1 :0 ] reg3;
@@ -414,7 +391,7 @@ module shiftRegiste_4 #(
   assign s_axis_data_tvalid = reg4[PACKET_LENGTH];
   assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
   assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = header_reg;     
+  assign s_axis_data_tuser = {header,16'h0,incoming_ce_timestamp[15:0],incoming_axi_timestamp[15:0],timer[15:0]};     
 endmodule
 
 module timestamper #(

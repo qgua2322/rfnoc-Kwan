@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_labtool.xml'  majorVersion='1' minorVersion='0' timeStamp='Mon Jul  2 22:09:06 2018'>
+<webTalkData  fileName='usage_statistics_ext_labtool.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Jul  3 16:16:03 2018'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1412921" description="" />
-  <keyValuePair key="date_generated" value="Mon Jul  2 22:09:05 2018" description="" />
+  <keyValuePair key="date_generated" value="Tue Jul  3 16:16:02 2018" description="" />
   <keyValuePair key="os_platform" value="LIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2015.4 (64-bit)" description="" />
-  <keyValuePair key="project_id" value="24af722b-d317-42b6-b84c-d345ec4c0e00" description="" />
+  <keyValuePair key="project_id" value="1eba52a7-8137-4e17-a861-86f625b6ef92" description="" />
   <keyValuePair key="project_iteration" value="1" description="" />
   <keyValuePair key="random_id" value="0d109ce8-04a4-4265-a22c-db64491d4a96" description="" />
   <keyValuePair key="registration_id" value="175612712_205625359_210670467_161" description="" />
@@ -22,8 +22,8 @@
   <keyValuePair key="cpu_name" value="Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz" description="" />
   <keyValuePair key="cpu_speed" value="2591.998 MHz" description="" />
   <keyValuePair key="os_name" value="Ubuntu" description="" />
-  <keyValuePair key="os_release" value="Ubuntu 16.04.2 LTS" description="" />
-  <keyValuePair key="system_ram" value="8.000 GB" description="" />
+  <keyValuePair key="os_release" value="Ubuntu 16.04.4 LTS" description="" />
+  <keyValuePair key="system_ram" value="4.000 GB" description="" />
   <keyValuePair key="total_processors" value="1" description="" />
  </section>
  <section name="labtool" level="1" order="3" description="">

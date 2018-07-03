@@ -1,0 +1,19 @@
+03/07/2018
+
+incoming_ce_timestamp at timestamp[47:32]
+incoming_axi_timestamp at timestamp[31:16]
+outcoming_IP_timestamp at timestamp[15:0]
+outcoming_axi_timestamp at payload[47:32]
+outcoming_ce_timestamp at payload[31:16]
+
+All the incoming timestamp will fail when the operating cycle of IP higher than the time different of two continue packet.
+(Remain to be fixed)
+
+Vivado simulation 2015.4 pass
+
+02/07/2018
+
+Tried to update the Vivado to 2017.4.
+I could used it to generate a bitstream, but I could not run simulation on it.
+
+I am currently using two OS, one is using Vivado 2015.4, the other is using 2017.4 .

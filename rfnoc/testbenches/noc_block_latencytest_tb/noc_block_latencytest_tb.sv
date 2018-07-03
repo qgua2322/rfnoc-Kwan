@@ -97,7 +97,7 @@ module noc_block_latencytest_tb();
       begin
         cvita_payload_t send_payload;
         $display("Star sending");
-        send_payload.push_back(64'hdeadbeef);
+        send_payload.push_back(64'habcd0000deadbeef);
         /*
         for (int i = 1; i < 10; i++) begin
           
