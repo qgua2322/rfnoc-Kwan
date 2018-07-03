@@ -12,16 +12,13 @@ int main(void){
 
     int * outs = (int*) malloc (22*sizeof(int));
 
-    outs[0] = 0x00000000;
+    outs[0] = 0xabcd0000;
     outs[1] = 0xdeadbeef;
-    for(i=1;i<9;i++){
-        outs[2*i] = 0x00000000;
+    for(i=1;i<11;i++){
+        outs[2*i] = 0xabcd0000;
         outs[2*i+1] = i;
     }
-    outs[18] = 0x00000000;
-    outs[19] = 0xabcdbeef;
-    outs[20] = 0x00000000;
-    outs[21] = 0xfeedbeef;
+
     fwrite(outs,22*sizeof(int),1,fp_out);
 
     return 0;

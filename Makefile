@@ -37,5 +37,6 @@ download:
 detect:
 	uhd_usrp_probe
 
-create_input:
+create_test_input:
+	rm create_input
 	gcc -o create_input create_input.cpp && ./create_input && hexdump test_in.bin
