@@ -1,0 +1,7 @@
+Running: xsim.dir/noc_block_latencytest_tb_behav/xsimk -simmode gui -wdb noc_block_latencytest_tb_behav.wdb -simrunnum 0 -socket 54271
+Design successfully loaded
+Design Loading Memory Usage: 141480 KB (Peak: 143148 KB)
+Design Loading CPU Usage: 50 ms
+Simulation completed
+Simulation Memory Usage: 229648 KB (Peak: 280748 KB)
+Simulation CPU Usage: 1670 ms

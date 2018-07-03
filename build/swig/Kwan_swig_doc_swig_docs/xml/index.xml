@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classgr_1_1Kwan_1_1latencytest" kind="class"><name>gr::Kwan::latencytest</name>
+    <member refid="classgr_1_1Kwan_1_1latencytest_1a34841f593788a08ede8e8581895c8cfc" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1Kwan_1_1latencytest_1a193c9707b9d6a38c6eb7ec82e0c5634f" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1Kwan" kind="namespace"><name>gr::Kwan</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1af9116550ed2cfea7be7ee660d0d82597" kind="define"><name>KWAN_API</name></member>
+  </compound>
+  <compound refid="latencytest_8h" kind="file"><name>latencytest.h</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/vivado/rfnoc/src/rfnoc-Kwan/include</name>
+  </compound>
+  <compound refid="dir_e17bd6ea65139864f647b1d8a3b90316" kind="dir"><name>/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan</name>
+  </compound>
+</doxygenindex>
