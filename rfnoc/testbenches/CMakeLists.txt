@@ -1,1 +1,0 @@
-add_subdirectory(noc_block_latencytest_tb)

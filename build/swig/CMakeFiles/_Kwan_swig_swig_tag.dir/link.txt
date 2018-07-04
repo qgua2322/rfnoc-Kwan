@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/_Kwan_swig_swig_tag.dir/_Kwan_swig_swig_tag.cpp.o  -o _Kwan_swig_swig_tag  -L/home/phwl/rfnoc/lib/libgnuradio-ettus.so -rdynamic 
