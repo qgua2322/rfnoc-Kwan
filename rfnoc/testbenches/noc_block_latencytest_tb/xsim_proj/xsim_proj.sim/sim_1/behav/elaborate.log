@@ -1,0 +1,108 @@
+Vivado Simulator 2015.4
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto d110c5f5c09742cfa43af00a67a8c0b4 --debug all --relax --mt 8 -d WORKING_DIR=/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb -L work -L unisims_ver -L unimacro_ver -L secureip --snapshot noc_block_latencytest_tb_behav work.noc_block_latencytest_tb work.glbl -log elaborate.log -timescale 1ns/1ns 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index -1 into value is out of bounds [/home/vivado/rfnoc/src/uhd-fpga/usrp3/lib/control/synchronizer_impl.v:35]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.settings_bus_t(SR_AWIDTH=16)
+Compiling module work.settings_bus_master(SR_AWIDTH=16...
+Compiling module work.settings_bus_t(RB_DWIDTH=32)
+Compiling module work.settings_bus_master(RB_DWIDTH=32...
+Compiling module work.axi_slave_mux(FIFO_WIDTH=64,DST_...
+Compiling module work.axi_forwarding_cam(BASE=0,WIDTH=...
+Compiling module work.axi_crossbar(NUM_INPUTS=3,NUM_OU...
+Compiling module work.settings_bus_t
+Compiling module work.settings_bus_slave
+Compiling module work.axis_t(DWIDTH=64)
+Compiling module work.cvita_slave
+Compiling module work.cvita_master
+Compiling module work.axis_t
+Compiling module work.axis_master
+Compiling module work.axis_slave
+Compiling module work.rfnoc_block_streamer_default
+WARNING: [VRFC 10-525] concatenation member label not yet supported; label ignored [../../../../../../../../uhd-fpga/usrp3/sim/rfnoc/sim_rfnoc_lib.svh:441]
+Compiling module work.synchronizer_impl(WIDTH=1,STAGES...
+Compiling module work.synchronizer(STAGES=2,INITIAL_VA...
+Compiling module work.synchronizer_impl(WIDTH=5,STAGES...
+Compiling module work.synchronizer(WIDTH=5,STAGES=2)
+Compiling module work.bin2gray(WIDTH=5)
+Compiling module work.gray2bin(WIDTH=5)
+Compiling module work.axi_fifo_2clk(SIZE=5,WIDTH=65)
+Compiling module unisims_ver.SRLC32E
+Compiling module work.axi_fifo_short(WIDTH=65)
+Compiling module work.axi_mux4(BUFFER=1)
+Compiling module work.axi_demux4_default
+Compiling module work.axi_demux(SIZE=1)
+Compiling module work.axi_mux(PRE_FIFO_SIZE=0,SIZE=1)
+Compiling module work.axi_fifo(WIDTH=65,SIZE=8'b0101)
+Compiling module work.cvita_hdr_parser(REGISTER=0)
+Compiling module work.time_compare
+Compiling module work.cvita_hdr_encoder
+Compiling module work.cmd_pkt_proc(RB_AWIDTH=3,USE_TIM...
+Compiling module work.setting_reg(my_addr=8'b0101,widt...
+Compiling module work.setting_reg(my_addr=8'b01111101)
+Compiling module work.setting_reg(my_addr=8'b0111,widt...
+Compiling module work.setting_reg(my_addr=8'b01111110)
+Compiling module work.setting_reg(my_addr=8'b0110,widt...
+Compiling module work.setting_reg(my_addr=8'b01000,wid...
+Compiling module work.ram_2port(DWIDTH=65,AWIDTH=8'b01...
+Compiling module work.axi_fifo_bram(WIDTH=65,SIZE=8'b0...
+Compiling module work.axi_fifo(WIDTH=65,SIZE=8'b01010)
+Compiling module work.axi_fifo_cascade(WIDTH=65,SIZE=8...
+Compiling module work.axi_packet_gate(SIZE=8'b01010)
+Compiling module work.setting_reg(my_addr=8'b010)
+Compiling module work.setting_reg(my_addr=8'b011,width...
+Compiling module work.source_flow_control(SR_FLOW_CTRL...
+Compiling module work.noc_output_port(SR_FLOW_CTRL_WIN...
+Compiling module work.ram_2port(DWIDTH=65,AWIDTH=8'b01...
+Compiling module work.axi_fifo_bram(WIDTH=65,SIZE=8'b0...
+Compiling module work.axi_fifo(WIDTH=65,SIZE=8'b01011)
+Compiling module work.chdr_fifo_large(SIZE=8'b01011)
+Compiling module work.setting_reg(my_addr=8'b0)
+Compiling module work.setting_reg(my_addr=8'b01)
+Compiling module work.axi_fifo_flop2(WIDTH=65)
+Compiling module work.cvita_hdr_parser_default
+Compiling module work.axi_fifo_short(WIDTH=128)
+Compiling module work.axi_fifo(WIDTH=65,SIZE=5)
+Compiling module work.chdr_framer(SIZE=5,WIDTH=64)
+Compiling module work.flow_control_responder(SR_FLOW_C...
+Compiling module work.setting_reg(my_addr=8'b0100,widt...
+Compiling module work.packet_error_responder(SR_ERROR_...
+Compiling module work.noc_responder(SR_FLOW_CTRL_CYCS_...
+Compiling module work.axi_fifo(WIDTH=65,SIZE=1)
+Compiling module work.axi_mux(POST_FIFO_SIZE=1,SIZE=2)
+Compiling module work.noc_input_port(SR_FLOW_CTRL_CYCS...
+Compiling module work.noc_shell(NOC_ID=64'b11111111111...
+Compiling module work.axi_fifo(WIDTH=128)
+Compiling module work.axi_fifo(WIDTH=65)
+Compiling module work.chdr_deframer
+Compiling module work.ram_2port(DWIDTH=65,AWIDTH=11)
+Compiling module work.axi_fifo_bram(WIDTH=65,SIZE=11)
+Compiling module work.axi_fifo(WIDTH=65,SIZE=11)
+Compiling module work.chdr_framer(SIZE=11,USE_SEQ_NUM=...
+Compiling module work.axi_fifo_short(WIDTH=33)
+Compiling module work.axi_fifo(WIDTH=33,SIZE=5)
+Compiling module work.axi_wrapper(MTU=11,SIMPLE_MODE=0...
+Compiling module work.axi_demux_default
+Compiling module work.axi_mux(SIZE=2)
+Compiling module work.noc_block_export_io(NUM_PORTS=1)
+Compiling module work.noc_output_port(SR_FLOW_CTRL_WIN...
+Compiling module work.noc_shell(NOC_ID=64'b01010101010...
+Compiling module work.ram_2port(DWIDTH=65,AWIDTH=10)
+Compiling module work.axi_fifo_bram(WIDTH=65,SIZE=10)
+Compiling module work.axi_fifo(WIDTH=65,SIZE=10)
+Compiling module work.chdr_framer(SIZE=10,USE_SEQ_NUM=...
+Compiling module work.axi_wrapper(SIMPLE_MODE=0)
+Compiling module work.setting_reg(my_addr=8'b10000000)
+Compiling module work.setting_reg(my_addr=8'b10000001)
+Compiling module work.shiftRegiste_4
+Compiling module work.noc_block_latencytest_default
+Compiling module work.noc_block_latencytest_tb
+WARNING: [VRFC 10-525] concatenation member label not yet supported; label ignored [../../../../../../../../uhd-fpga/usrp3/sim/rfnoc/sim_rfnoc_lib.svh:287]
+Compiling module work.glbl
+Compiling package work.$unit_2
+Built simulation snapshot noc_block_latencytest_tb_behav

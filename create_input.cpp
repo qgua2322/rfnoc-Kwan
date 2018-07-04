@@ -10,16 +10,16 @@ int main(void){
         exit(1);
     }
 
-    int * outs = (int*) malloc (22*sizeof(int));
+    int * outs = (int*) malloc (1001*2*sizeof(int));
 
     outs[0] = 0xabcd0000;
     outs[1] = 0xdeadbeef;
-    for(i=1;i<11;i++){
+    for(i=1;i<1000;i++){
         outs[2*i] = 0xabcd0000;
         outs[2*i+1] = i;
     }
 
-    fwrite(outs,22*sizeof(int),1,fp_out);
+    fwrite(outs,1001*2*sizeof(int),1,fp_out);
 
     return 0;
 }
