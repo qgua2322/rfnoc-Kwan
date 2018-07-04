@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" line="41" column="1" bodyfile="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" bodystart="41" bodyend="-1"/>
+        <location file="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" line="41" column="1" bodyfile="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -53,7 +53,7 @@
 <para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1Kwan_1_1latencytest" kindref="compound">Kwan::latencytest</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1Kwan_1_1latencytest_1a193c9707b9d6a38c6eb7ec82e0c5634f" kindref="member">Kwan::latencytest::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" line="51" column="1"/>
+        <location file="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" line="51" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -82,7 +82,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" line="39" column="1" bodyfile="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" bodystart="38" bodyend="58"/>
+    <location file="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" line="39" column="1" bodyfile="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h" bodystart="38" bodyend="58"/>
     <listofallmembers>
       <member refid="classgr_1_1Kwan_1_1latencytest_1a193c9707b9d6a38c6eb7ec82e0c5634f" prot="public" virt="non-virtual"><scope>gr::Kwan::latencytest</scope><name>make</name></member>
       <member refid="classgr_1_1Kwan_1_1latencytest_1a34841f593788a08ede8e8581895c8cfc" prot="public" virt="non-virtual"><scope>gr::Kwan::latencytest</scope><name>sptr</name></member>

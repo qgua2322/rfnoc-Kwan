@@ -1,8 +1,8 @@
-# Install script for directory: /home/vivado/rfnoc/src/rfnoc-Kwan/docs/doxygen
+# Install script for directory: /home/phwl/rfnoc/src/rfnoc-Kwan/docs/doxygen
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/vivado/rfnoc")
+  set(CMAKE_INSTALL_PREFIX "/home/phwl/rfnoc")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/gr-Kwan" TYPE DIRECTORY FILES
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/xml"
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/html"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/xml"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/html"
     )
 endif()
 

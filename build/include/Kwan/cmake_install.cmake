@@ -1,8 +1,8 @@
-# Install script for directory: /home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan
+# Install script for directory: /home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/vivado/rfnoc")
+  set(CMAKE_INSTALL_PREFIX "/home/phwl/rfnoc")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/Kwan" TYPE FILE FILES
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h"
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h"
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest_block_ctrl.hpp"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest_block_ctrl.hpp"
     )
 endif()
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches
+# Install script for directory: /home/phwl/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/vivado/rfnoc")
+  set(CMAKE_INSTALL_PREFIX "/home/phwl/rfnoc")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/rfnoc/testbenches/noc_block_latencytest_tb/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/rfnoc/testbenches/noc_block_latencytest_tb/cmake_install.cmake")
 
 endif()
 

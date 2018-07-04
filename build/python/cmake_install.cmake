@@ -1,8 +1,8 @@
-# Install script for directory: /home/vivado/rfnoc/src/rfnoc-Kwan/python
+# Install script for directory: /home/phwl/rfnoc/src/rfnoc-Kwan/python
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/vivado/rfnoc")
+  set(CMAKE_INSTALL_PREFIX "/home/phwl/rfnoc")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,13 +33,13 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE FILE FILES "/home/vivado/rfnoc/src/rfnoc-Kwan/python/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE FILE FILES "/home/phwl/rfnoc/src/rfnoc-Kwan/python/__init__.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE FILE FILES
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/python/__init__.pyc"
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/python/__init__.pyo"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/python/__init__.pyc"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/python/__init__.pyo"
     )
 endif()
 

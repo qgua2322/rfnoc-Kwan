@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/_Kwan_swig_doc_tag.cpp" "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/CMakeFiles/_Kwan_swig_doc_tag.dir/_Kwan_swig_doc_tag.cpp.o"
+  "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/_Kwan_swig_doc_tag.cpp" "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/CMakeFiles/_Kwan_swig_doc_tag.dir/_Kwan_swig_doc_tag.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -14,16 +14,13 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "lib"
   "include"
-  "/home/vivado/rfnoc/include"
+  "/home/phwl/rfnoc/include"
   "swig"
   "../swig"
-  "/home/vivado/rfnoc/include/gnuradio/swig"
+  "/home/phwl/rfnoc/include/gnuradio/swig"
   "/usr/include/python2.7"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   )
-
-# Fortran module output directory.
-set(CMAKE_Fortran_TARGET_MODULE_DIR "")

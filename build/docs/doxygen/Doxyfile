@@ -654,8 +654,8 @@ WARN_LOGFILE           =
 # directories like "/usr/src/myproject". Separate the files or directories
 # with spaces.
 
-INPUT                  = /home/vivado/rfnoc/src/rfnoc-Kwan \
-                         /home/vivado/rfnoc/src/rfnoc-Kwan/build
+INPUT                  = /home/phwl/rfnoc/src/rfnoc-Kwan \
+                         /home/phwl/rfnoc/src/rfnoc-Kwan/build
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is
@@ -688,11 +688,11 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = /home/vivado/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/html \
-                         /home/vivado/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/xml \
-                         /home/vivado/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/other/doxypy.py \
-                         /home/vivado/rfnoc/src/rfnoc-Kwan/build/_CPack_Packages \
-                         /home/vivado/rfnoc/src/rfnoc-Kwan/cmake
+EXCLUDE                = /home/phwl/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/html \
+                         /home/phwl/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/xml \
+                         /home/phwl/rfnoc/src/rfnoc-Kwan/build/docs/doxygen/other/doxypy.py \
+                         /home/phwl/rfnoc/src/rfnoc-Kwan/build/_CPack_Packages \
+                         /home/phwl/rfnoc/src/rfnoc-Kwan/cmake
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -790,7 +790,7 @@ INPUT_FILTER           =
 # info on how filters are used. If FILTER_PATTERNS is empty or if
 # non of the patterns match the file name, INPUT_FILTER is applied.
 
-FILTER_PATTERNS        = *.py=/home/vivado/rfnoc/src/rfnoc-Kwan/doc/doxygen/other/doxypy.py
+FILTER_PATTERNS        = *.py=/home/phwl/rfnoc/src/rfnoc-Kwan/doc/doxygen/other/doxypy.py
 
 # If the FILTER_SOURCE_FILES tag is set to YES, the input filter (if set using
 # INPUT_FILTER) will be used to filter the input files when producing source

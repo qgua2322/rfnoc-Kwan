@@ -13,14 +13,8 @@
       <node id="6">
         <label>gnuradio/attributes.h</label>
       </node>
-      <node id="8">
-        <label>ettus/rfnoc_block.h</label>
-      </node>
-      <node id="7">
-        <label>ettus/device3.h</label>
-      </node>
       <node id="4">
-        <label>/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h</label>
+        <label>/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h</label>
         <link refid="latencytest.h"/>
         <childnode refid="5" relation="include">
         </childnode>
@@ -36,6 +30,12 @@
         <link refid="api_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
+      </node>
+      <node id="8">
+        <label>ettus/rfnoc_block.h</label>
+      </node>
+      <node id="7">
+        <label>ettus/device3.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1Kwan_1_1latencytest" prot="public">gr::Kwan::latencytest</innerclass>
@@ -97,6 +97,6 @@
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_KWAN_LATENCYTEST_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h"/>
+    <location file="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h"/>
   </compounddef>
 </doxygen>

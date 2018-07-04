@@ -1,8 +1,8 @@
-# Install script for directory: /home/vivado/rfnoc/src/rfnoc-Kwan/swig
+# Install script for directory: /home/phwl/rfnoc/src/rfnoc-Kwan/swig
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/vivado/rfnoc")
+  set(CMAKE_INSTALL_PREFIX "/home/phwl/rfnoc")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,13 +39,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan/_Kwan_swig.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE MODULE FILES "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/_Kwan_swig.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE MODULE FILES "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/_Kwan_swig.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan/_Kwan_swig.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan/_Kwan_swig.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan/_Kwan_swig.so"
-         OLD_RPATH "/home/vivado/rfnoc/lib/libgnuradio-ettus.so:/home/vivado/rfnoc/src/rfnoc-Kwan/build/lib:"
-         NEW_RPATH "")
+    file(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan/_Kwan_swig.so")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan/_Kwan_swig.so")
     endif()
@@ -53,20 +51,20 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE FILE FILES "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE FILE FILES "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/Kwan" TYPE FILE FILES
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig.pyc"
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig.pyo"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig.pyc"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig.pyo"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/Kwan/Kwan/swig" TYPE FILE FILES
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/swig/Kwan_swig.i"
-    "/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig_doc.i"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/swig/Kwan_swig.i"
+    "/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/Kwan_swig_doc.i"
     )
 endif()
 

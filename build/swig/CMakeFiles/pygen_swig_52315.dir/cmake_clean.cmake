@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "Kwan_swigPYTHON_wrap.cxx"
   "Kwan_swig.py"
-  "CMakeFiles/pygen_swig_564e7"
+  "CMakeFiles/pygen_swig_52315"
   "Kwan_swig.pyc"
   "Kwan_swig.pyo"
   "Kwan_swig.py"
@@ -9,5 +9,5 @@ file(REMOVE_RECURSE
 
 # Per-language clean rules from dependency scanning.
 foreach(lang )
-  include(CMakeFiles/pygen_swig_564e7.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/pygen_swig_52315.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

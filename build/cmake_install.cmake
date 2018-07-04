@@ -1,8 +1,8 @@
-# Install script for directory: /home/vivado/rfnoc/src/rfnoc-Kwan
+# Install script for directory: /home/phwl/rfnoc/src/rfnoc-Kwan
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/vivado/rfnoc")
+  set(CMAKE_INSTALL_PREFIX "/home/phwl/rfnoc")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,24 +33,24 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/Kwan" TYPE FILE FILES "/home/vivado/rfnoc/src/rfnoc-Kwan/cmake/Modules/KwanConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/Kwan" TYPE FILE FILES "/home/phwl/rfnoc/src/rfnoc-Kwan/cmake/Modules/KwanConfig.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fpga" TYPE FILE FILES "/home/vivado/rfnoc/src/rfnoc-Kwan/cmake/Modules/Findfpga.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fpga" TYPE FILE FILES "/home/phwl/rfnoc/src/rfnoc-Kwan/cmake/Modules/Findfpga.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/include/Kwan/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/lib/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/swig/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/python/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/grc/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/apps/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/docs/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/rfnoc/blocks/cmake_install.cmake")
-  include("/home/vivado/rfnoc/src/rfnoc-Kwan/build/rfnoc/testbenches/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/include/Kwan/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/lib/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/swig/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/python/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/grc/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/apps/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/docs/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/rfnoc/blocks/cmake_install.cmake")
+  include("/home/phwl/rfnoc/src/rfnoc-Kwan/build/rfnoc/testbenches/cmake_install.cmake")
 
 endif()
 
@@ -62,5 +62,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vivado/rfnoc/src/rfnoc-Kwan/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/phwl/rfnoc/src/rfnoc-Kwan/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

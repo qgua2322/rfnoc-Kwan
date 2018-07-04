@@ -1,16 +1,16 @@
 # http://www.vtk.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
 
-IF(NOT EXISTS "/home/vivado/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt")
-  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/vivado/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt\"")
-ENDIF(NOT EXISTS "/home/vivado/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt")
+IF(NOT EXISTS "/home/phwl/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt")
+  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/phwl/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt\"")
+ENDIF(NOT EXISTS "/home/phwl/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt")
 
-FILE(READ "/home/vivado/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt" files)
+FILE(READ "/home/phwl/rfnoc/src/rfnoc-Kwan/build/install_manifest.txt" files)
 STRING(REGEX REPLACE "\n" ";" files "${files}")
 FOREACH(file ${files})
   MESSAGE(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")
   IF(EXISTS "$ENV{DESTDIR}${file}")
     EXEC_PROGRAM(
-      "/usr/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+      "/opt/Xilinx/SDK/2017.4/tps/lnx64/cmake-3.3.2/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
       OUTPUT_VARIABLE rm_out
       RETURN_VALUE rm_retval
       )
@@ -19,7 +19,7 @@ FOREACH(file ${files})
     ENDIF(NOT "${rm_retval}" STREQUAL 0)
   ELSEIF(IS_SYMLINK "$ENV{DESTDIR}${file}")
     EXEC_PROGRAM(
-      "/usr/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+      "/opt/Xilinx/SDK/2017.4/tps/lnx64/cmake-3.3.2/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
       OUTPUT_VARIABLE rm_out
       RETURN_VALUE rm_retval
       )

@@ -3,13 +3,13 @@
   <compounddef id="api_8h" kind="file" language="C++">
     <compoundname>api.h</compoundname>
     <includes local="no">gnuradio/attributes.h</includes>
-    <includedby refid="latencytest_8h" local="no">/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h</includedby>
+    <includedby refid="latencytest_8h" local="no">/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h</includedby>
     <incdepgraph>
       <node id="1">
         <label>gnuradio/attributes.h</label>
       </node>
       <node id="0">
-        <label>/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h</label>
+        <label>/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h</label>
         <link refid="api.h"/>
         <childnode refid="1" relation="include">
         </childnode>
@@ -17,11 +17,11 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="3">
-        <label>/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h</label>
+        <label>/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/latencytest.h</label>
         <link refid="latencytest_8h"/>
       </node>
       <node id="2">
-        <label>/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h</label>
+        <label>/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h</label>
         <link refid="api.h"/>
         <childnode refid="3" relation="include">
         </childnode>
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h" line="30" column="12" bodyfile="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h" bodystart="30" bodyend="-1"/>
+        <location file="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h" line="30" column="12" bodyfile="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -79,6 +79,6 @@
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_KWAN_API_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="/home/vivado/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h"/>
+    <location file="/home/phwl/rfnoc/src/rfnoc-Kwan/include/Kwan/api.h"/>
   </compounddef>
 </doxygen>
