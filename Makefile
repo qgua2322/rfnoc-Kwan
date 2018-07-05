@@ -23,10 +23,10 @@ install:
 	make install	
 
 compile:
-	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest -I $(RFNOC_PATH)/src/rfnoc-Kwan/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos)
+	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest -I $(RFNOC_PATH)/src/rfnoc-Kwan-cross/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos)
 
 compile-all:
-	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest -I $(RFNOC_PATH)/src/rfnoc-Kwan/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos --clean-all)
+	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest -I $(RFNOC_PATH)/src/rfnoc-Kwan-cross/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos --clean-all)
 
 sim:
 	cd ./build && make noc_block_latencytest_tb
