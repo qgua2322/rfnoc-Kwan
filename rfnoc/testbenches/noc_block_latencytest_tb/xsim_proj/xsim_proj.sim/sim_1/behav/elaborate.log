@@ -2,6 +2,7 @@ Vivado Simulator 2015.4
 Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
 Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto d110c5f5c09742cfa43af00a67a8c0b4 --debug all --relax --mt 8 -d WORKING_DIR=/home/vivado/rfnoc/src/rfnoc-Kwan/rfnoc/testbenches/noc_block_latencytest_tb -L work -L unisims_ver -L unimacro_ver -L secureip --snapshot noc_block_latencytest_tb_behav work.noc_block_latencytest_tb work.glbl -log elaborate.log -timescale 1ns/1ns 
 Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running fuse with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
 Starting static elaboration
 WARNING: [VRFC 10-1783] select index -1 into value is out of bounds [/home/vivado/rfnoc/src/uhd-fpga/usrp3/lib/control/synchronizer_impl.v:35]
 Completed static elaboration
