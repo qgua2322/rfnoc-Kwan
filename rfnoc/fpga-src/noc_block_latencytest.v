@@ -246,12 +246,12 @@ module noc_block_latencytest #(
       .clear_tx_seqnum(clear_tx_seqnum), 
       .m_axis_data_tlast(m_axis_data_tlast), .m_axis_data_tdata(m_axis_data_tdata),
       .m_axis_data_tvalid(m_axis_data_tvalid), .m_axis_data_tready(m_axis_data_tready),
-      .m_axis_data_tuser(),
+      .m_axis_data_tuser(m_axis_data_tuser),
       .s_axis_data_tlast(s_axis_data_tlast), .s_axis_data_tdata(s_axis_data_tdata),
       .s_axis_data_tvalid(s_axis_data_tvalid), .s_axis_data_tready(s_axis_data_tready),
       .s_axis_data_tuser(s_axis_data_tuser),
       .timer(vita_time_input), .header(header_wire),
-      .incoming_axi_timestamp(), .incoming_ce_timestamp(incoming_ce_timestamp)
+      .incoming_axi_timestamp(incoming_axi_timestamp), .incoming_ce_timestamp(incoming_ce_timestamp)
     );
   
  
@@ -317,5 +317,5 @@ module shiftRegiste_4 #(
   assign s_axis_data_tvalid = reg4[PACKET_LENGTH];
   assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
   assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = {header,m_axis_data_tuser[125],15'h0,(m_axis_data_tuser[47:0]-incoming_ce_timestamp[47:0])};     
+  assign s_axis_data_tuser = {header,m_axis_data_tuser[125],15'h0,(incoming_ce_timestamp[47:0]-m_axis_data_tuser[47:0])};     
 endmodule

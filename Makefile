@@ -1,5 +1,4 @@
-RFNOC_PATH 		:= /home/vivado/rfnoc
-RFNOC_PATH_PHWL		:= /home/phwl/rfnoc
+RFNOC_PATH 		:= ~/rfnoc
 
 all:copy_xml install
 
@@ -7,9 +6,6 @@ copy_xml:
 	@cp rfnoc/blocks/latencytest.xml $(RFNOC_PATH)/share/uhd/rfnoc/blocks/
 	@cp grc/Kwan_latencytest.xml $(RFNOC_PATH)/share/gnuradio/grc/blocks/
 
-copy_xml_phwl:
-	@cp rfnoc/blocks/latencytest.xml $(RFNOC_PATH_PHWL)/share/uhd/rfnoc/blocks/
-	@cp grc/Kwan_latencytest.xml $(RFNOC_PATH_PHWL)/share/gnuradio/grc/blocks/
 
 copy_bitstream:
 	@cp $(RFNOC_PATH)/src/uhd-fpga/usrp3/top/x300/build/usrp_x310_fpga_RFNOC_HG.bit ./
