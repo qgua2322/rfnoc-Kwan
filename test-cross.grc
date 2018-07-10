@@ -754,7 +754,7 @@
     </param>
     <param>
       <key>stream_args</key>
-      <value></value>
+      <value>spp = 64</value>
     </param>
   </block>
   <connection>

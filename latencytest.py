@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Latencytest
-# Generated: Wed Jul  4 09:53:34 2018
+# Generated: Tue Jul 10 13:59:02 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -67,7 +67,7 @@ class latencytest(gr.top_block, Qt.QWidget):
         self.device3 = variable_uhd_device3_0 = ettus.device3(uhd.device_addr_t( ",".join(('type=x300', args)) ))
         self.sample_w = sample_w = 16
         self.samp_rate_0 = samp_rate_0 = 784000
-        self.samp_rate = samp_rate = 10000000
+        self.samp_rate = samp_rate = 200000
         self.qy = qy = 8
         self.qx = qx = 4
         self.p_offset = p_offset = 1
@@ -78,25 +78,31 @@ class latencytest(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.uhd_rfnoc_streamer_fifo_0 = ettus.rfnoc_generic(
+        self.uhd_rfnoc_streamer_radio_0 = ettus.rfnoc_radio(
             self.device3,
-            uhd.stream_args( # TX Stream Args
-                cpu_format="u8",
-                otw_format="u8",
-                args="gr_vlen={0},{1}".format(8, "" if 8 == 1 else "spp={0}".format(8)),
+            uhd.stream_args( # Tx Stream Args
+                cpu_format="s16",
+                otw_format="s16",
+                args="", # empty
             ),
-            uhd.stream_args( # RX Stream Args
-                cpu_format="u8",
-                otw_format="u8",
-                args="gr_vlen={0},{1}".format(8, "" if 8 == 1 else "spp={0}".format(8)),
+            uhd.stream_args( # Rx Stream Args
+                cpu_format="s16",
+                otw_format="s16",
+        	args='spp = 64',
             ),
-            "FIFO", -1, -1,
+            0, -1
         )
-        self.blocks_throttle_0_0 = blocks.throttle(gr.sizeof_int*2, samp_rate,True)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_int*2, '/home/phwl/rfnoc/src/rfnoc-Kwan/test_in.bin', False)
-        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_int*2, '/home/phwl/rfnoc/src/rfnoc-Kwan/test_out.bin', False)
-        self.blocks_file_sink_0_0.set_unbuffered(True)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_int*2, '/home/phwl/rfnoc/src/rfnoc-Kwan/out.bin', False)
+        self.uhd_rfnoc_streamer_radio_0.set_rate(samp_rate)
+        for i in xrange(1):
+            self.uhd_rfnoc_streamer_radio_0.set_rx_freq(1.982e9, i)
+            self.uhd_rfnoc_streamer_radio_0.set_rx_gain(20, i)
+            self.uhd_rfnoc_streamer_radio_0.set_rx_dc_offset(True, i)
+
+        self.uhd_rfnoc_streamer_radio_0.set_rx_bandwidth(56e6, 0)
+
+        self.uhd_rfnoc_streamer_radio_0.set_rx_antenna("TX/RX", 0)
+
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_int*2, '/home/phwl/rfnoc/src/rfnoc-Kwan-cross/out.bin', False)
         self.blocks_file_sink_0.set_unbuffered(False)
         self.blocks_copy_0 = blocks.copy(gr.sizeof_int*2)
         self.blocks_copy_0.set_enabled(True)
@@ -120,11 +126,8 @@ class latencytest(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.connect((self.blocks_copy_0, 0), (self.blocks_file_sink_0, 0))
-        self.connect((self.blocks_file_source_0, 0), (self.blocks_throttle_0_0, 0))
-        self.connect((self.blocks_throttle_0_0, 0), (self.blocks_file_sink_0_0, 0))
-        self.connect((self.blocks_throttle_0_0, 0), (self.uhd_rfnoc_streamer_fifo_0, 0))
         self.connect((self.Kwan_latencytest_0, 0), (self.blocks_copy_0, 0))
-        self.device3.connect(self.uhd_rfnoc_streamer_fifo_0.get_block_id(), 0, self.Kwan_latencytest_0.get_block_id(), 0)
+        self.device3.connect(self.uhd_rfnoc_streamer_radio_0.get_block_id(), 0, self.Kwan_latencytest_0.get_block_id(), 0)
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "latencytest")
@@ -160,7 +163,7 @@ class latencytest(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.blocks_throttle_0_0.set_sample_rate(self.samp_rate)
+        self.uhd_rfnoc_streamer_radio_0.set_rate(self.samp_rate)
 
     def get_qy(self):
         return self.qy
