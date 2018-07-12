@@ -317,5 +317,5 @@ module shiftRegiste_4 #(
   assign s_axis_data_tvalid = reg4[PACKET_LENGTH];
   assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
   assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = {header,0,m_axis_data_tuser[125],incoming_ce_timestamp[30:0],m_axis_data_tuser[30:0]};     
+  assign s_axis_data_tuser = {header,8'b0,incoming_ce_timestamp[27:0],m_axis_data_tuser[27:0]};     
 endmodule
