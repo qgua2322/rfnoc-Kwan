@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Latencytest
-# Generated: Tue Jul 10 13:59:02 2018
+# Generated: Thu Jul 12 15:30:48 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -67,7 +67,7 @@ class latencytest(gr.top_block, Qt.QWidget):
         self.device3 = variable_uhd_device3_0 = ettus.device3(uhd.device_addr_t( ",".join(('type=x300', args)) ))
         self.sample_w = sample_w = 16
         self.samp_rate_0 = samp_rate_0 = 784000
-        self.samp_rate = samp_rate = 200000
+        self.samp_rate = samp_rate = 2000000
         self.qy = qy = 8
         self.qx = qx = 4
         self.p_offset = p_offset = 1
@@ -88,7 +88,7 @@ class latencytest(gr.top_block, Qt.QWidget):
             uhd.stream_args( # Rx Stream Args
                 cpu_format="s16",
                 otw_format="s16",
-        	args='spp = 64',
+        	args='spp = 2',
             ),
             0, -1
         )

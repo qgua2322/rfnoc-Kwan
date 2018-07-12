@@ -267,7 +267,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>200000</value>
+      <value>2000000</value>
     </param>
   </block>
   <block>
@@ -754,7 +754,7 @@
     </param>
     <param>
       <key>stream_args</key>
-      <value>spp = 64</value>
+      <value>spp = 2</value>
     </param>
   </block>
   <connection>
