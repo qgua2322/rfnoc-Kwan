@@ -80,7 +80,7 @@ module noc_block_latencytest #(
 
 
   reg [63:0] incoming_ce_timestamp ;
-  always @(posedge i_tvalid) begin
+  always @(posedge i_tlast) begin
     incoming_ce_timestamp <= vita_time_input;
   end
 
