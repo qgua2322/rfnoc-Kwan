@@ -31,7 +31,7 @@ download:
 	uhd_image_loader --args "type=x300,addr=192.168.10.2" --fpga-path ./usrp_x310_fpga_RFNOC_HG.bit
 
 detect:
-	uhd_usrp_probe
+	uhd_usrp_probe --args addr=192.168.10.2
 
 create_test_input:
 	rm create_input
