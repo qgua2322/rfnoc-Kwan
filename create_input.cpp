@@ -10,16 +10,17 @@ int main(void){
         exit(1);
     }
 
-    int * outs = (int*) malloc (1001*2*sizeof(int));
-
-    outs[0] = 0xabcd0000;
+    int NumPacket = 10000;
+    int * outs = (int*) malloc ((NumPacket+1)*2*sizeof(int));
+    
+    outs[0] = 0xabcdbeef;
     outs[1] = 0xdeadbeef;
-    for(i=1;i<1000;i++){
-        outs[2*i] = 0xabcd0000;
+    for(i=1;i<(NumPacket+1);i++){
+        outs[2*i] = 0xabcdbeef;
         outs[2*i+1] = i;
     }
 
-    fwrite(outs,1001*2*sizeof(int),1,fp_out);
+    fwrite(outs,(NumPacket+1)*2*sizeof(int),1,fp_out);
 
     return 0;
 }

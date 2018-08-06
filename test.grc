@@ -391,7 +391,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(336, 308)</value>
+      <value>(664, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -489,7 +489,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(592, 300)</value>
+      <value>(888, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -548,7 +548,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 284)</value>
+      <value>(1048, 248)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -573,6 +573,10 @@
   </block>
   <block>
     <key>blocks_file_source</key>
+    <param>
+      <key>begin_tag</key>
+      <value>pmt.PMT_NIL</value>
+    </param>
     <param>
       <key>alias</key>
       <value></value>
@@ -646,7 +650,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(112, 452)</value>
+      <value>(248, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -721,7 +725,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 404)</value>
+      <value>(432, 260)</value>
     </param>
     <param>
       <key>_rotation</key>

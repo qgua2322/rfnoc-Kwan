@@ -70,21 +70,15 @@ module noc_block_latencytest #(
   reg [63:0] simple_counter_shift32  = 64'h0;
 
   always @(posedge ce_clk ) begin 
-    if (i_tdata == 64'habcd0000deadbeef) begin
+    if (i_tdata == 64'habcdbeefdeadbeef) begin
       simple_counter <= 64'h0;
     end else begin
       simple_counter <= simple_counter+1;
     end
   end
 
-  assign o_tdata = (o_tdata_temp[63:48] == 16'habcd) ?  {o_tdata_temp[63:32],simple_counter[15:0],o_tdata_temp[15:0] }:o_tdata_temp ;
-  assign str_src_tdata = (str_src_tdata_temp[63:48] == 16'habcd) ? {str_src_tdata_temp[63:48],simple_counter[15:0],str_src_tdata_temp[31:0]} :str_src_tdata_temp ;
-
-
-  reg [63:0] incoming_ce_timestamp ;
-  always @(posedge i_tvalid) begin
-    incoming_ce_timestamp <= simple_counter;
-  end
+  assign o_tdata = (o_tdata_temp[63:32] == 32'habcdbeef) ?  {simple_counter[31:0],o_tdata_temp[31:0] }:o_tdata_temp ;
+  assign str_src_tdata = (str_src_tdata_temp[63:32] == 32'habcdbeef) ? {str_src_tdata_temp[63:32],simple_counter[31:0]} :str_src_tdata_temp ;
 
   noc_shell #(
     .NOC_ID(NOC_ID),
@@ -133,27 +127,7 @@ module noc_block_latencytest #(
   wire         s_axis_data_tvalid;
   wire         s_axis_data_tready;
 
-  /*
-  timestamper #(
-      .HEADER(2'b01),
-      .PACKET_LENGTH(64),
-      .TIME_LENGTH(64)
-    )timestamper_noc2axi(
-      .clk(ce_clk),
-      .reset(ce_rst),
-      .input_packet(str_sink_tdata),
-      .input_valid(str_sink_tvalid),
-      .input_time(simple_counter) ,
-      .output_packet(str_sink_tdata_temp)
-    );
-  */
   
-
-  always @( posedge str_sink_tvalid) begin
-      incoming_axi_timestamp <= simple_counter;
-  end
-  
-
   axi_wrapper #(
     .SIMPLE_MODE(0))
   axi_wrapper (
@@ -181,20 +155,7 @@ module noc_block_latencytest #(
     .m_axis_pkt_len_tvalid(),
     .m_axis_pkt_len_tready());
 
-  /*
-  timestamper #(
-      .HEADER(2'b10),
-      .PACKET_LENGTH(32),
-      .TIME_LENGTH(64)
-    )timestamper_axi2ip(
-      .clk(ce_clk),
-      .reset(ce_rst),
-      .input_packet(m_axis_data_tdata),
-      .input_valid(m_axis_data_tvalid),
-      .input_time(simple_counter) ,
-      .output_packet(m_axis_data_tdata_temp)
-    );
-  */
+ 
   ////////////////////////////////////////////////////////////
   //
   // User code
@@ -264,23 +225,11 @@ module noc_block_latencytest #(
   end
   
   //Header wire and reg
-  
   wire eob = 1'b0;
   wire [15:0] packet_length = 16'h0;
   reg [11:0] seqnum_cnt = 12'h0;
   wire [63:0] header_wire = {2'b00,1'b1,eob,seqnum_cnt,packet_length, src_sid,next_dst_sid};
-  //reg [127:0] header_reg = 128'h0;
 
-  
-  /*
-  always @(posedge ce_clk or negedge ce_rst) begin
-    if(ce_rst) begin
-      header_reg <= 128'h0;
-    end else  begin
-      header_reg <= header_wire;
-    end
-  end
-  */
   
 
   
@@ -297,7 +246,7 @@ module noc_block_latencytest #(
       .s_axis_data_tvalid(s_axis_data_tvalid), .s_axis_data_tready(s_axis_data_tready),
       .s_axis_data_tuser(s_axis_data_tuser),
       .timer(simple_counter), .header(header_wire),
-      .incoming_axi_timestamp(incoming_axi_timestamp), .incoming_ce_timestamp(incoming_ce_timestamp)
+      .incoming_axi_timestamp(), .incoming_ce_timestamp()
     );
   
  
@@ -307,38 +256,6 @@ module noc_block_latencytest #(
 
   
   
-endmodule
-
-
-
-/*
-Simple MUX module
-*/
-module mux_2to1 #(
-  parameter PACKET_LENGTH  = 32)
- (input clk,
-  input [PACKET_LENGTH-1:0]selector,
-  input [PACKET_LENGTH-1:0] input1,
-  input [PACKET_LENGTH-1:0] input2,
-  input [PACKET_LENGTH-1:0] input3,
-  output reg [PACKET_LENGTH-1:0] Q); 
-
-
-
-
-  localparam choose1 = 64'h0,
-             choose2 = 64'h1,
-             choose3  = 64'd2;
-
-  always @(selector ) begin
-    case(selector)
-    
-    64'hdeadbeef00000000: Q <=input1;
-    64'habcdbeef00000000: Q <=input2;
-    64'hfeedbeef00000000: Q <=input3;
-    default : Q <= selector;
-    endcase
-  end
 endmodule
 
 
@@ -391,152 +308,8 @@ module shiftRegiste_4 #(
   assign s_axis_data_tvalid = reg4[PACKET_LENGTH];
   assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
   assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = {header,16'h0,incoming_ce_timestamp[15:0],incoming_axi_timestamp[15:0],timer[15:0]};     
+  assign s_axis_data_tuser = {header,32'h0,timer[31:0]};     
 endmodule
 
-module timestamper #(
-    parameter HEADER = 2'b00,
-    parameter PACKET_LENGTH = 64,
-    parameter TIME_LENGTH = 64
-  )(
-    input wire reset, input wire clk, 
-    input  [PACKET_LENGTH-1:0] i_tdata, input  i_tlast, input  i_tvalid, output i_tready,
-    output [PACKET_LENGTH-1:0] o_tdata, output o_tlast, output o_tvalid, input  o_tready
-  );
-  
-  localparam inital_state = 3'd0,
-             counting_state = 3'd1,
-             stop_state  = 3'd2,
-             wait_until_send_state = 3'd3,
-             send_timestamp_header = 3'd4,
-             send_timestamp_data   = 3'd5;
 
-  
-  reg [2:0] state = 2'd0;
-  reg [2:0] next_state = 2'd0;
-  reg [2:0] Enable_counter = 2'd0;
-  reg id_captured = 0;
-  reg [31:0] stream_id = 0;
-  reg counter_stop = 0;
-  reg time_stamp_tvalid = 0;
-  reg time_stamp_tlast = 0;
-  reg time_stamp_tready = 0;
-  wire ready2send_time_stamp =(!i_tvalid) && counter_stop && o_tready;
-  reg sedning_timestamp = 0;
-  reg [63:0] counter = 0;
-  wire [63:0] header = {4'h0,12'h0,16'd16,stream_id};
-  reg [63:0] time_stamp_packet = 0;
-
-  //Conditional state transistion
-  always @(*) begin
-    case(state)
-      inital_state: begin
-        if(i_tdata == 'hdeadbeef ) begin
-          next_state <= counting_state;
-        end else begin
-          next_state <= inital_state;
-        end  
-      end
-
-      counting_state: begin
-        if(i_tdata == 'habcdbeef) begin
-          next_state <= wait_until_send_state;
-        end else begin
-          next_state <= counting_state;
-        end
-      end
-
-
-      wait_until_send_state: begin
-        if(ready2send_time_stamp) begin
-          next_state <= send_timestamp_header;
-        end else begin
-          next_state <= wait_until_send_state;
-        end 
-      end
-
-      send_timestamp_header: begin
-          next_state <= send_timestamp_data;
-      end
-
-      send_timestamp_data: begin
-          next_state <= inital_state;
-      end
-
-    endcase
-  end
-
-  //Contorl signal 
-  always @(*) begin
-    case(state)
-      inital_state: begin
-        Enable_counter <= 2'd0;
-        time_stamp_tlast <= 0;
-        counter_stop <= 0;
-        time_stamp_tvalid <= 0;
-        time_stamp_tlast <= 0;
-        sedning_timestamp <= 0;
-        
-
-      end
-
-      counting_state: begin
-        Enable_counter <= 2'd1;
-        id_captured = 1;
-      end
-
-
-      wait_until_send_state: begin
-        time_stamp_packet <= header;
-        Enable_counter <= 2'd2;
-        counter_stop <= 1;
-        sedning_timestamp <= 1;
-        
-      end
-
-      send_timestamp_header: begin
-
-        time_stamp_tvalid <= 1;
-        
-      end
-
-      send_timestamp_data: begin
-        time_stamp_packet <= {HEADER,counter[PACKET_LENGTH-2-1:0]};
-        time_stamp_tlast <= 1;
-      end
-
-      endcase
-  end
-
-  //Counter
-  always @(posedge clk) begin 
-    if (reset| (Enable_counter == 2'd0)) begin
-      counter <= 0;
-    end else if (Enable_counter == 2'd1) begin 
-      counter <= counter + 1;
-    end 
-  end
-  
-  //Synchronous state transistion 
-  always @(posedge clk or negedge reset) begin 
-    if (reset) begin
-      state <= inital_state;
-    end else  begin 
-      state <= next_state;
-    end 
-  end
-
-  always @(posedge i_tvalid ) begin
-    if(!id_captured) begin
-      stream_id <= i_tdata[31:0];
-    end
-  end
-  //Send our timestamp packet only when Upper stream is not sending, lower stream is ready, and our time_steamp is ready
-  assign o_tdata = (sedning_timestamp) ? time_stamp_packet : i_tdata;
-  assign o_tlast = (time_stamp_tlast) ? 1: i_tlast;
-  assign o_tvalid = (time_stamp_tvalid) ? 1: i_tvalid;
-  //tell Upper stream not to send when timestamper is sending
-  assign i_tready = (ready2send_time_stamp) ? 0:o_tready;
-
-endmodule
 
