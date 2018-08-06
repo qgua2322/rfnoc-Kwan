@@ -379,7 +379,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 428)</value>
+      <value>(880, 284)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -473,7 +473,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 492)</value>
+      <value>(512, 396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -532,7 +532,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1104, 324)</value>
+      <value>(1104, 396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -587,7 +587,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(560, 304)</value>
+      <value>(680, 248)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -674,7 +674,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(736, 572)</value>
+      <value>(680, 572)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -953,7 +953,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 328)</value>
+      <value>(904, 392)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1127,7 +1127,7 @@
     </param>
     <param>
       <key>gain</key>
-      <value>20</value>
+      <value>50</value>
     </param>
     <param>
       <key>cpu_format</key>
