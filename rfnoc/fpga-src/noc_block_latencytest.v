@@ -70,19 +70,16 @@ module noc_block_latencytest #(
   reg [63:0] simple_counter_shift32  = 64'h0;
 
   always @(posedge ce_clk ) begin 
-    if (i_tdata == 64'habcd0000deadbeef) begin
+    if (i_tdata == 64'habcdbeefdeadbeef) begin
       simple_counter <= 64'h0;
     end else begin
       simple_counter <= simple_counter+1;
     end
   end
 
+  wire [63:0] i_tdata_temp;
+  assign i_tdata_temp = (i_tlast == 1'b1) ? {i_tdata[63:32],vita_time_input[31:0]} : i_tdata;
 
-
-  reg [63:0] incoming_ce_timestamp ;
-  always @(posedge i_tlast) begin
-    incoming_ce_timestamp <= vita_time_input;
-  end
 
   noc_shell #(
     .NOC_ID(NOC_ID),
@@ -251,7 +248,7 @@ module noc_block_latencytest #(
       .s_axis_data_tvalid(s_axis_data_tvalid), .s_axis_data_tready(s_axis_data_tready),
       .s_axis_data_tuser(s_axis_data_tuser),
       .timer(vita_time_input), .header(header_wire),
-      .incoming_axi_timestamp(incoming_axi_timestamp), .incoming_ce_timestamp(incoming_ce_timestamp)
+      .incoming_axi_timestamp(), .incoming_ce_timestamp()
     );
   
  
@@ -293,10 +290,10 @@ module shiftRegiste_4 #(
   wire pipe_out_tready;
   wire [127:0] pipe_out_tuser;
   
-  reg [PACKET_LENGTH+1 :0 ] reg1;
-  reg [PACKET_LENGTH+1 :0 ] reg2;
-  reg [PACKET_LENGTH+1 :0 ] reg3;
-  reg [PACKET_LENGTH+1 :0 ] reg4;
+  reg [PACKET_LENGTH+33 :0 ] reg1;
+  reg [PACKET_LENGTH+33 :0 ] reg2;
+  reg [PACKET_LENGTH+33 :0 ] reg3;
+  reg [PACKET_LENGTH+33 :0 ] reg4;
 
 
   always @(posedge clk or negedge reset) begin
@@ -306,16 +303,16 @@ module shiftRegiste_4 #(
       reg3 <= 0;
       reg4 <= 0;
     end else if (clk && s_axis_data_tready) begin
-      reg1 <= {m_axis_data_tlast,m_axis_data_tvalid,m_axis_data_tdata}; 
+      reg1 <= {m_axis_data_tlast,m_axis_data_tvalid,m_axis_data_tuser[31:0],m_axis_data_tdata}; 
       reg2 <= reg1;
       reg3 <= reg2;
       reg4 <= reg3;
     end
   end
 
-  assign s_axis_data_tlast = reg4[PACKET_LENGTH+1];
-  assign s_axis_data_tvalid = reg4[PACKET_LENGTH];
+  assign s_axis_data_tlast = reg4[PACKET_LENGTH+33];
+  assign s_axis_data_tvalid = reg4[PACKET_LENGTH+32];
   assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
   assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = {header,8'b0,incoming_ce_timestamp[27:0],m_axis_data_tuser[27:0]};     
+  assign s_axis_data_tuser = {header,timer[31:0],reg4[PACKET_LENGTH+31:PACKET_LENGTH]};     
 endmodule
