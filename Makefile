@@ -11,7 +11,6 @@ copy_bitstream:
 	@cp $(RFNOC_PATH)/src/uhd-fpga/usrp3/top/x300/build/usrp_x310_fpga_RFNOC_HG.bit ./
 
 install:
-	rm -rf ./build
 	mkdir build
 	cd	./build	&&	cmake ../
 	make
@@ -40,3 +39,10 @@ create_test_input:
 	rm create_input
 	gcc -o create_input create_input.cpp && ./create_input && hexdump test_in.bin
 
+extract_lib_file: 
+	@cp -r ~/rfnoc/src/uhd-fpga/usrp3/lib/radio/ ./modified-lib-file/
+
+
+overwrite_lib_file: 
+	@cp -r ./modified-lib-file/radio/ ~/rfnoc/src/uhd-fpga/usrp3/lib/radio/
+ 

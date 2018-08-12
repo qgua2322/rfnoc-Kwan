@@ -53,8 +53,8 @@ module noc_block_Latencytest #(
   wire [63:0] cmdout_tdata, ackin_tdata;
   wire        cmdout_tlast, cmdout_tvalid, cmdout_tready, ackin_tlast, ackin_tvalid, ackin_tready;
 
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]      str_sink_tdata;
-  (* dont_touch = "true",mark_debug ="true" *) wire         str_sink_tlast, str_sink_tvalid, str_sink_tready;
+  wire [63:0]      str_sink_tdata;
+  wire         str_sink_tlast, str_sink_tvalid, str_sink_tready;
 
    wire [63:0]      str_src_tdata;
    wire        str_src_tlast, str_src_tvalid, str_src_tready;
@@ -99,11 +99,11 @@ module noc_block_Latencytest #(
   // Convert RFNoC Shell interface into AXI stream interface
   //
   ////////////////////////////////////////////////////////////
-  (* dont_touch = "true",mark_debug ="true" *) wire [31:0] m_axis_data_tdata;
-  (* dont_touch = "true",mark_debug ="true" *) wire [127:0] m_axis_data_tuser;
-  (* dont_touch = "true",mark_debug ="true" *) wire        m_axis_data_tlast;
-  (* dont_touch = "true",mark_debug ="true" *) wire        m_axis_data_tvalid;
-  (* dont_touch = "true",mark_debug ="true" *) wire        m_axis_data_tready;
+  wire [31:0] m_axis_data_tdata;
+  wire [127:0] m_axis_data_tuser;
+  wire        m_axis_data_tlast;
+  wire        m_axis_data_tvalid;
+  wire        m_axis_data_tready;
 
   wire [31:0] s_axis_data_tdata;
   wire [127:0] s_axis_data_tuser;
