@@ -45,4 +45,12 @@ extract_lib_file:
 
 overwrite_lib_file: 
 	@cp -r ./modified-lib-file/radio/ ~/rfnoc/src/uhd-fpga/usrp3/lib/radio/
+
+install-background:
+	sudo apt-get install git
+	sudo apt-get install python-setuptools python-dev python-pip build-essential
+	sudo pip install git+https://github.com/gnuradio/pybombs.git
+	pybombs recipes add gr-recipes git+https://github.com/gnuradio/gr-recipes.git
+	pybombs recipes add ettus git+https://github.com/EttusResearch/ettus-pybombs.git
+	pybombs prefix init ~/rfnoc -R rfnoc -a rfnoc
  
