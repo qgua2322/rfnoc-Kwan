@@ -182,10 +182,10 @@ module noc_block_radio_core #(
   //Marker
   reg [31:0] marker_id = 32'h0;
   always @(posedge ce_clk)begin
-    if(ce_rst =1'b1) begin
+    if(ce_rst == 1'b1) begin
       marker_id<=32'h0;
     end else begin
-      if(s_axis_data_tlast[0] = 1'b1) begin
+      if(s_axis_data_tlast[0] == 1'b1) begin
         marker_id <= marker_id +1;
       end
     end
@@ -231,7 +231,7 @@ module noc_block_radio_core #(
         .m_axis_config_tvalid(),
         .m_axis_config_tready(1'b0)
       );
-        assign s_axis_data_tdata[i] = (s_axis_data_tlast[i] = 1'b1) ? marker_id : 32'habcdbeef ;
+        assign s_axis_data_tdata[i] = (s_axis_data_tlast[i] == 1'b1) ? marker_id : 32'habcdbeef ;
       radio_datapath_core #(
         .RADIO_NUM(i)
       ) radio_datapath_core_i (

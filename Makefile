@@ -56,3 +56,6 @@ install-background:
 	pybombs recipes add ettus git+https://github.com/EttusResearch/ettus-pybombs.git
 	pybombs prefix init ~/rfnoc -R rfnoc -a rfnoc
  
+clean-all
+	rm -rf ./build
+	rm -rf ./rfnoc/testbenchs/noc_block_Latencytest_tb/xsim_proj/
