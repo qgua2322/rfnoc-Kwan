@@ -45,8 +45,8 @@ extract_lib_file:
 
 
 overwrite_lib_file: 
-	@cp -r ./modified-lib-file/radio/ ~/rfnoc/src/uhd-fpga/usrp3/lib/radio/
-	@cp -r ./modified-lib-file/rfnoc/ ~/rfnoc/src/uhd-fpga/usrp3/lib/rfnoc/
+	@cp -r ./modified-lib-file/radio/ ~/rfnoc/src/uhd-fpga/usrp3/lib/
+	@cp -r ./modified-lib-file/rfnoc/ ~/rfnoc/src/uhd-fpga/usrp3/lib/
 
 install-background:
 	sudo apt-get install git
@@ -57,5 +57,7 @@ install-background:
 	pybombs prefix init ~/rfnoc -R rfnoc -a rfnoc
  
 clean-all
+	cd ./build make uninstall
+	cd ../
 	rm -rf ./build
 	rm -rf ./rfnoc/testbenchs/noc_block_Latencytest_tb/xsim_proj/
