@@ -56,7 +56,7 @@ install-background:
 	pybombs recipes add ettus git+https://github.com/EttusResearch/ettus-pybombs.git
 	pybombs prefix init ~/rfnoc -R rfnoc -a rfnoc
  
-clean-all
+clean-all:
 	cd ./build make uninstall
 	cd ../
 	rm -rf ./build
