@@ -30,10 +30,10 @@ module noc_block_radio_core #(
 );
 
   //Output debug wire
-  //(* dont_touch = "true",mark_debug ="true" *) wire [63:0]      o_tdata_temp;
+  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]      o_tdata_temp;
   //(* dont_touch = "true",mark_debug ="true" *) wire         o_tlast_temp, o_tvalid_temp, o_tready_temp;
 
-  //assign o_tdata = o_tdata_temp;
+  assign o_tdata_temp = o_tdata;
   //assign o_tlast = o_tlast_temp;
   //assign o_tvalid = o_tvalid_temp;
   //assign o_tready = o_tready_temp;
@@ -55,10 +55,10 @@ module noc_block_radio_core #(
 
   wire [64*NUM_CHANNELS-1:0]      str_sink_tdata;
   wire [NUM_CHANNELS-1:0]         str_sink_tlast, str_sink_tvalid, str_sink_tready;
-  wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
+  //wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
   wire [NUM_CHANNELS-1:0]         str_src_tlast, str_src_tvalid, str_src_tready;
   
-  //(* dont_touch = "true",mark_debug ="true" *) wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
+  (* dont_touch = "true",mark_debug ="true" *) wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
   //(* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]         str_src_tlast, str_src_tvalid, str_src_tready;
 
   wire [63:0]                     vita_time;
@@ -104,10 +104,10 @@ module noc_block_radio_core #(
   wire [NUM_CHANNELS-1:0]     m_axis_data_tvalid;
   wire [NUM_CHANNELS-1:0]     m_axis_data_tready;
 
-  wire [31:0]                 s_axis_data_tdata[0:NUM_CHANNELS-1];
+  (* dont_touch = "true",mark_debug ="true" *) wire [31:0]                 s_axis_data_tdata[0:NUM_CHANNELS-1];
   wire [127:0]                s_axis_data_tuser[0:NUM_CHANNELS-1];
-  wire [NUM_CHANNELS-1:0]     s_axis_data_tlast;
-  wire [NUM_CHANNELS-1:0]     s_axis_data_tvalid;
+  (* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]     s_axis_data_tlast;
+  (* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]     s_axis_data_tvalid;
   wire [NUM_CHANNELS-1:0]     s_axis_data_tready;
 
   wire [NUM_CHANNELS*64-1:0]  resp_tdata;
@@ -177,6 +177,19 @@ module noc_block_radio_core #(
   assign db_fe_set_addr = set_addr;
   assign db_fe_set_data = set_data;
   assign db_fe_rb_addr  = rb_addr;
+  
+
+  //Marker
+  reg [31:0] marker_id = 32'h0;
+  always @(posedge ce_clk)begin
+    if(ce_rst =1'b1) begin
+      marker_id<=32'h0;
+    end else begin
+      if(s_axis_data_tlast[0] = 1'b1) begin
+        marker_id <= marker_id +1;
+      end
+    end
+  end
 
   genvar i;
   generate
@@ -218,7 +231,7 @@ module noc_block_radio_core #(
         .m_axis_config_tvalid(),
         .m_axis_config_tready(1'b0)
       );
-
+        assign s_axis_data_tdata[i] = (s_axis_data_tlast[i] = 1'b1) ? marker_id : 32'habcdbeef ;
       radio_datapath_core #(
         .RADIO_NUM(i)
       ) radio_datapath_core_i (
@@ -234,7 +247,7 @@ module noc_block_radio_core #(
         .set_stb(set_stb[i]), .set_addr(set_addr[8*i+7:8*i]), .set_data(set_data[32*i+31:32*i]),
         .rb_stb(rb_stb_dp[i]), .rb_addr(rb_addr[8*i+7:8*i]), .rb_data(rb_data_dp[64*i+63:64*i]), .rb_holdoff(~db_fe_rb_stb[i]),
         .tx_tdata(m_axis_data_tdata[i]), .tx_tlast(m_axis_data_tlast[i]), .tx_tvalid(m_axis_data_tvalid[i]), .tx_tready(m_axis_data_tready[i]), .tx_tuser(m_axis_data_tuser[i]),
-        .rx_tdata(s_axis_data_tdata[i]), .rx_tlast(s_axis_data_tlast[i]), .rx_tvalid(s_axis_data_tvalid[i]), .rx_tready(s_axis_data_tready[i]), .rx_tuser(s_axis_data_tuser[i]),
+        .rx_tdata(), .rx_tlast(s_axis_data_tlast[i]), .rx_tvalid(s_axis_data_tvalid[i]), .rx_tready(s_axis_data_tready[i]), .rx_tuser(s_axis_data_tuser[i]),
         .resp_tdata(resp_tdata[64*i+63:64*i]), .resp_tlast(resp_tlast[i]), .resp_tvalid(resp_tvalid[i]), .resp_tready(resp_tready[i])
       );
 

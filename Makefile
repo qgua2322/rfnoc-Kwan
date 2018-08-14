@@ -41,10 +41,12 @@ create_test_input:
 
 extract_lib_file: 
 	@cp -r ~/rfnoc/src/uhd-fpga/usrp3/lib/radio/ ./modified-lib-file/
+	@cp -r ~/rfnoc/src/uhd-fpga/usrp3/lib/rfnoc/ ./modified-lib-file/
 
 
 overwrite_lib_file: 
 	@cp -r ./modified-lib-file/radio/ ~/rfnoc/src/uhd-fpga/usrp3/lib/radio/
+	@cp -r ./modified-lib-file/rfnoc/ ~/rfnoc/src/uhd-fpga/usrp3/lib/rfnoc/
 
 install-background:
 	sudo apt-get install git
