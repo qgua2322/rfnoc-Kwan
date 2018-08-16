@@ -23,29 +23,29 @@ module chdr_framer_2clk #(
   output [63:0] o_tdata, output o_tlast, output o_tvalid, input o_tready
 );
 
-  wire          header_i_tvalid, header_i_tready;
-  wire [63:0]   body_i_tdata;
-  wire          body_i_tlast, body_i_tvalid, body_i_tready;
+  (* dont_touch = "true",mark_debug ="true" *) wire          header_i_tvalid, header_i_tready;
+  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]   body_i_tdata;
+  (* dont_touch = "true",mark_debug ="true" *) wire          body_i_tlast, body_i_tvalid, body_i_tready;
 
-  wire [127:0]  header_o_tdata;
-  wire          header_o_tvalid, header_o_tready;
-  wire [63:0]   body_o_tdata;
-  wire          body_o_tlast, body_o_tvalid, body_o_tready;
+  (* dont_touch = "true",mark_debug ="true" *) wire [127:0]  header_o_tdata;
+  (* dont_touch = "true",mark_debug ="true" *) wire          header_o_tvalid, header_o_tready;
+  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]   body_o_tdata;
+  (* dont_touch = "true",mark_debug ="true" *) wire          body_o_tlast, body_o_tvalid, body_o_tready;
   reg  [15:0]   length;
   reg  [11:0]   seqnum;
   
-  //debug wire
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]   body_i_tdata_debug;
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]   body_o_tdata_debug;
-  (* dont_touch = "true",mark_debug ="true" *) wire o_tvalid_debug;
-  (* dont_touch = "true",mark_debug ="true" *) wire o_tlast_debug;
+  (* dont_touch = "true",mark_debug ="true" *) wire i_tready_debug;
+  (* dont_touch = "true",mark_debug ="true" *) wire o_tvalid_debug, o_tlast_debug, o_tready_debug;
   (* dont_touch = "true",mark_debug ="true" *) wire [63:0] o_tdata_debug;
-  assign body_i_tdata_debug = body_i_tdata;
-  assign body_o_tdata_debug = body_o_tdata;
+  assign i_tready_debug = i_tready;
+  assign o_tready_debug = o_tready;
   assign o_tdata_debug = o_tdata;
   assign o_tvalid_debug = o_tvalid;
   assign o_tlast_debug = o_tlast;
+  
+  (* dont_touch = "true",mark_debug ="true" *)
 
+  //
   assign i_tready = header_i_tready & body_i_tready;
   assign header_i_tvalid = i_tlast & i_tvalid & i_tready;
   assign body_i_tlast = i_tlast;
