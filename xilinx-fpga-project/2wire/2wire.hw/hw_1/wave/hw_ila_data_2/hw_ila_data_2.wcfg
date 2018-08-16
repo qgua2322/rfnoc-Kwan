@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/vivado/rfnoc/src/rfnoc-kwan_cross/xilinx-fpga-project/2wire/2wire.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="8192001fs"></ZoomEndTime>
+      <Cursor1Time time="4252000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="646"></NameColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tdata">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">body_i_tdata[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tlast">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tlast</obj_property>
+      <obj_property name="ObjectShortName">body_i_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tready">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tready</obj_property>
+      <obj_property name="ObjectShortName">body_i_tready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tvalid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/body_i_tvalid</obj_property>
+      <obj_property name="ObjectShortName">body_i_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/header_i_tready">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/header_i_tready</obj_property>
+      <obj_property name="ObjectShortName">header_i_tready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/header_i_tvalid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/header_i_tvalid</obj_property>
+      <obj_property name="ObjectShortName">header_i_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/i_tready_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/gen[0].axi_wrapper/chdr_framer/i_tready_debug</obj_property>
+      <obj_property name="ObjectShortName">i_tready_debug</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/s_axis_data_tdata_temp[0]_134">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/s_axis_data_tdata_temp[0]_134[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata_temp[0]_134[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/s_axis_data_tlast">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/s_axis_data_tlast[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tlast[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/s_axis_data_tready">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/s_axis_data_tready[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/s_axis_data_tuser[0]_133">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/s_axis_data_tuser[0]_133[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tuser[0]_133[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/s_axis_data_tvalid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/s_axis_data_tvalid[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="x300_core/noc_block_radio_core_i0/simple_counter_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">x300_core/noc_block_radio_core_i0/simple_counter_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">simple_counter_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

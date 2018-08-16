@@ -1,0 +1,1542 @@
+Release 14.7 - ngc2edif P_INT.20171106 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design LvFpga_Chinch_Interface.ngc ...
+WARNING:NetListWriters:298 - No output is written to
+   LvFpga_Chinch_Interface.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[15]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[15]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[15]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceToFifo[15]_StreamState has a mismatched property name
+   bInputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[15]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[15]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[14]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[14]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[14]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceToFifo[14]_StreamState has a mismatched property name
+   bInputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[14]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[14]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[13]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[13]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[13]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceToFifo[13]_StreamState has a mismatched property name
+   bInputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[13]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[13]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[12]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[12]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[12]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceToFifo[12]_StreamState has a mismatched property name
+   bInputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[12]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[12]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[11]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[11]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[11]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceToFifo[11]_StreamState has a mismatched property name
+   bInputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[11]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[11]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[10]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[10]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[10]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceToFifo[10]_StreamState has a mismatched property name
+   bInputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[10]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[10]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[9]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[9]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[9]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[9]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[9]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[9]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[8]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[8]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[8]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[8]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[8]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[8]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[7]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[7]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[7]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[7]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[7]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[7]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[6]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[6]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[6]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[6]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[6]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[6]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[5]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[5]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[5]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[5]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[5]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[5]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[4]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[4]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[4]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[4]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[4]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[4]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[3]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[3]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[3]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[3]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[3]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[3]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[2]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[2]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[2]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[2]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[2]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[2]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[1]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[1]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[1]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[1]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[1]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[1]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[0]_BytesRead
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[0]_BytesRead on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[0]_BytesRead<2:0>.
+WARNING:NetListWriters:305 - Port bus bInputStreamInterfaceToFifo[0]_StreamState
+   has a mismatched property name bInputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceToFifo[0]_StreamState on block ChinchDmaFifos using the
+   data bInputStreamInterfaceToFifo[0]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[15]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[15]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[15]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[15]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[15]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[15]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[15]_NumWriteSpaces has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[15]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[15]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[15]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[15]_StreamState on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[15]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[14]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[14]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[14]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[14]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[14]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[14]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[14]_NumWriteSpaces has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[14]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[14]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[14]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[14]_StreamState on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[14]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[13]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[13]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[13]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[13]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[13]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[13]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[13]_NumWriteSpaces has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[13]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[13]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[13]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[13]_StreamState on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[13]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[12]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[12]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[12]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[12]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[12]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[12]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[12]_NumWriteSpaces has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[12]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[12]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[12]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[12]_StreamState on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[12]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[11]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[11]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[11]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[11]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[11]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[11]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[11]_NumWriteSpaces has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[11]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[11]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[11]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[11]_StreamState on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[11]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[10]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[10]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[10]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[10]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[10]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[10]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[10]_NumWriteSpaces has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[10]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[10]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[10]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[10]_StreamState on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[10]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[9]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[9]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[9]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[9]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[9]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[9]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[9]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[9]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[9]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[9]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[9]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[9]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[8]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[8]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[8]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[8]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[8]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[8]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[8]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[8]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[8]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[8]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[8]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[8]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[7]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[7]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[7]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[7]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[7]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[7]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[7]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[7]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[7]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[7]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[7]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[7]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[6]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[6]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[6]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[6]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[6]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[6]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[6]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[6]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[6]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[6]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[6]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[6]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[5]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[5]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[5]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[5]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[5]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[5]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[5]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[5]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[5]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[5]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[5]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[5]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[4]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[4]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[4]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[4]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[4]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[4]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[4]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[4]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[4]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[4]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[4]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[4]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[3]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[3]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[3]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[3]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[3]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[3]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[3]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[3]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[3]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[3]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[3]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[3]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[2]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[2]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[2]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[2]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[2]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[2]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[2]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[2]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[2]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[2]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[2]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[2]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[1]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[1]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[1]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[1]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[1]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[1]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[1]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[1]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[1]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[1]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[1]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[1]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[0]_WriteLengthInBytes has a mismatched property
+   name bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[0]_WriteLengthInBytes on block ChinchDmaFifos
+   using the data bOutputStreamInterfaceToFifo[0]_WriteLengthInBytes<3:0>.
+WARNING:NetListWriters:305 - Port bus bOutputStreamInterfaceToFifo[0]_FifoData
+   has a mismatched property name bOutputStreamInterfaceToFifo on block
+   ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[0]_FifoData on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[0]_FifoData<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[0]_NumWriteSpaces has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[0]_NumWriteSpaces on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceToFifo[0]_NumWriteSpaces<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceToFifo[0]_StreamState has a mismatched property name
+   bOutputStreamInterfaceToFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceToFifo[0]_StreamState on block ChinchDmaFifos using the
+   data bOutputStreamInterfaceToFifo[0]_StreamState<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[15]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[15]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[15]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[15]_FifoFullCount has a mismatched property
+   name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[15]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[15]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[15]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[15]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[15]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[15]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[15]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[15]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[14]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[14]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[14]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[14]_FifoFullCount has a mismatched property
+   name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[14]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[14]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[14]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[14]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[14]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[14]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[14]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[14]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[13]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[13]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[13]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[13]_FifoFullCount has a mismatched property
+   name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[13]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[13]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[13]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[13]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[13]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[13]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[13]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[13]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[12]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[12]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[12]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[12]_FifoFullCount has a mismatched property
+   name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[12]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[12]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[12]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[12]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[12]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[12]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[12]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[12]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[11]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[11]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[11]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[11]_FifoFullCount has a mismatched property
+   name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[11]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[11]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[11]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[11]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[11]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[11]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[11]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[11]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[10]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[10]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[10]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[10]_FifoFullCount has a mismatched property
+   name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[10]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[10]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[10]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[10]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[10]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[10]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[10]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[10]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[9]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[9]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[9]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[9]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[9]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[9]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[9]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[9]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[9]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[9]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[9]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[9]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[8]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[8]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[8]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[8]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[8]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[8]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[8]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[8]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[8]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[8]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[8]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[8]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[7]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[7]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[7]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[7]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[7]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[7]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[7]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[7]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[7]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[7]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[7]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[7]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[6]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[6]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[6]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[6]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[6]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[6]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[6]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[6]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[6]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[6]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[6]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[6]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[5]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[5]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[5]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[5]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[5]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[5]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[5]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[5]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[5]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[5]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[5]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[5]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[4]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[4]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[4]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[4]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[4]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[4]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[4]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[4]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[4]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[4]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[4]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[4]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[3]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[3]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[3]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[3]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[3]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[3]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[3]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[3]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[3]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[3]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[3]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[3]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[2]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[2]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[2]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[2]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[2]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[2]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[2]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[2]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[2]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[2]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[2]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[2]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[1]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[1]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[1]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[1]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[1]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[1]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[1]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[1]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[1]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[1]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[1]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[1]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[0]_FifoDataOut has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[0]_FifoDataOut on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[0]_FifoDataOut<63:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[0]_FifoFullCount has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[0]_FifoFullCount on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[0]_FifoFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[0]_ByteLanePtr has a mismatched property name
+   bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[0]_ByteLanePtr on block ChinchDmaFifos using
+   the data bInputStreamInterfaceFromFifo[0]_ByteLanePtr<2:0>.
+WARNING:NetListWriters:305 - Port bus
+   bInputStreamInterfaceFromFifo[0]_StateInDefaultClkDomain has a mismatched
+   property name bInputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bInputStreamInterfaceFromFifo[0]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bInputStreamInterfaceFromFifo[0]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[15]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[15]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[15]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[15]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[15]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[15]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[15]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[15]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[15]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[14]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[14]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[14]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[14]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[14]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[14]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[14]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[14]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[14]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[13]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[13]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[13]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[13]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[13]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[13]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[13]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[13]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[13]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[12]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[12]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[12]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[12]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[12]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[12]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[12]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[12]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[12]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[11]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[11]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[11]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[11]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[11]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[11]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[11]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[11]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[11]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[10]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[10]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[10]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[10]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[10]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[10]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[10]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[10]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[10]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[9]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[9]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[9]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[9]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[9]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[9]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[9]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[9]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[9]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[8]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[8]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[8]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[8]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[8]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[8]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[8]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[8]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[8]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[7]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[7]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[7]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[7]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[7]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[7]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[7]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[7]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[7]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[6]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[6]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[6]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[6]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[6]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[6]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[6]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[6]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[6]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[5]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[5]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[5]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[5]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[5]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[5]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[5]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[5]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[5]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[4]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[4]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[4]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[4]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[4]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[4]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[4]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[4]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[4]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[3]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[3]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[3]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[3]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[3]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[3]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[3]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[3]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[3]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[2]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[2]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[2]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[2]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[2]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[2]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[2]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[2]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[2]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[1]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[1]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[1]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[1]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[1]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[1]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[1]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[1]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[1]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[0]_EmptyCount has a mismatched property name
+   bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[0]_EmptyCount on block ChinchDmaFifos using
+   the data bOutputStreamInterfaceFromFifo[0]_EmptyCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[0]_HostReadableFullCount has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[0]_HostReadableFullCount on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[0]_HostReadableFullCount<31:0>.
+WARNING:NetListWriters:305 - Port bus
+   bOutputStreamInterfaceFromFifo[0]_StateInDefaultClkDomain has a mismatched
+   property name bOutputStreamInterfaceFromFifo on block ChinchDmaFifos.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   bOutputStreamInterfaceFromFifo[0]_StateInDefaultClkDomain on block
+   ChinchDmaFifos using the data
+   bOutputStreamInterfaceFromFifo[0]_StateInDefaultClkDomain<1:0>.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[0].DmaInput.ChinchDmaInputFifoInterfacex/InStrmFifox/InS
+   trmFifoFlagsx/Madd_oReadAddUns[9]_GND_1114_o_add_4_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[1].DmaInput.ChinchDmaInputFifoInterfacex/InStrmFifox/InS
+   trmFifoFlagsx/Madd_oReadAddUns[9]_GND_1114_o_add_4_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[2].DmaInput.ChinchDmaInputFifoInterfacex/InStrmFifox/InS
+   trmFifoFlagsx/Madd_oReadAddUns[9]_GND_1114_o_add_4_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[3].DmaInput.ChinchDmaInputFifoInterfacex/InStrmFifox/InS
+   trmFifoFlagsx/Madd_oReadAddUns[9]_GND_1114_o_add_4_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[4].DmaInput.ChinchDmaInputFifoInterfacex/InStrmFifox/InS
+   trmFifoFlagsx/Madd_oReadAddUns[9]_GND_1114_o_add_4_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[5].DmaInput.ChinchDmaInputFifoInterfacex/InStrmFifox/InS
+   trmFifoFlagsx/Madd_oReadAddUns[9]_GND_1114_o_add_4_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[6].DmaOutput.ChinchDmaOutputFifoInterfacex/OutStrmFifox/
+   OutStrmFifoFlagsx/Madd_oReadAddUns[9]_GND_1745_o_add_5_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[7].DmaOutput.ChinchDmaOutputFifoInterfacex/OutStrmFifox/
+   OutStrmFifoFlagsx/Madd_oReadAddUns[9]_GND_1745_o_add_5_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[8].DmaOutput.ChinchDmaOutputFifoInterfacex/OutStrmFifox/
+   OutStrmFifoFlagsx/Madd_oReadAddUns[9]_GND_1745_o_add_5_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[9].DmaOutput.ChinchDmaOutputFifoInterfacex/OutStrmFifox/
+   OutStrmFifoFlagsx/Madd_oReadAddUns[9]_GND_1745_o_add_5_OUT_cy[7 : 4] on block
+   ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[10].DmaOutput.ChinchDmaOutputFifoInterfacex/OutStrmFifox
+   /OutStrmFifoFlagsx/Madd_oReadAddUns[9]_GND_1745_o_add_5_OUT_cy[7 : 4] on
+   block ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   DmaBlk.DmaComponents[11].DmaOutput.ChinchDmaOutputFifoInterfacex/OutStrmFifox
+   /OutStrmFifoFlagsx/Madd_oReadAddUns[9]_GND_1745_o_add_5_OUT_cy[7 : 4] on
+   block ChinchDmaFifos is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus bLvFpgaOutputTx_Data[51 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus bFlashOutputTx_Data[63 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPort2x/IoPort2Basex/TransmitSide.IoTransmitFifox/TransmitFi
+   fo.PacketFullyReceived/Madd_oeOutputCountGray[7]_GND_50_o_add_25_OUT_lut[7 :
+   4] on block EttusUsrpChinchWrapper is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPort2x/IoPort2Basex/TransmitSide.IoTransmitFifox/TransmitFi
+   fo.PacketFullyReceived/Madd_ieInputCountGray[7]_GND_50_o_add_13_OUT_lut[7 :
+   4] on block EttusUsrpChinchWrapper is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPort2x/IoPort2Basex/ReceiveSide.IoReceiveFifoBasex/FifoFlag
+   s/oNxInputCount2[5 : 2] on block EttusUsrpChinchWrapper is not reconstructed,
+   because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPort2x/IoPort2Basex/ReceiveSide.IoReceiveFifoBasex/PacketFu
+   llyReceived/Madd_oeOutputCountGray[9]_GND_80_o_add_26_OUT_lut[9 : 3] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPort2x/IoPort2Basex/ReceiveSide.IoReceiveFifoBasex/PacketFu
+   llyReceived/Madd_oeOutputCountGray[9]_GND_80_o_add_26_OUT_cy[6 : 3] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPort2x/IoPort2Basex/ReceiveSide.IoReceiveFifoBasex/PacketFu
+   llyReceived/Madd_ieInputCountGray[9]_GND_80_o_add_12_OUT_cy[6 : 3] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPortClkDelayTrainerx/Madd_TrainerBlock.bWindowSummation_cy[
+   4 : 0] on block EttusUsrpChinchWrapper is not reconstructed, because there
+   are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   IoPort2Wrapperx/IoPortClkDelayTrainerx/Madd_TrainerBlock.bWindowSummation_lut
+   [3 : 1] on block EttusUsrpChinchWrapper is not reconstructed, because there
+   are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   SwitchedChinchBimx/BimReceiveInterfacex/bInputData[63 : 3] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/bMemInputTx_Data[36 : 15] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[6].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/bPacketData[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[7].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/bPacketData[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[8].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/bPacketData[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[9].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/bPacketData[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[10].HostOutputStream.ChinchDmaOut
+   putx/ChinchDmaOutputControllerx/bPacketData[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[11].HostOutputStream.ChinchDmaOut
+   putx/ChinchDmaOutputControllerx/bPacketData[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[11].HostOutputStream.ChinchDmaOut
+   putx/ChinchDmaOutputControllerx/_n0157[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[10].HostOutputStream.ChinchDmaOut
+   putx/ChinchDmaOutputControllerx/_n0157[34 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[9].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/_n0157[34 : 0] on block EttusUsrpChinchWrapper
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[8].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/_n0157[34 : 0] on block EttusUsrpChinchWrapper
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[7].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/_n0157[34 : 0] on block EttusUsrpChinchWrapper
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/DmaBlk.DmaComponents[6].HostOutputStream.ChinchDmaOutp
+   utx/ChinchDmaOutputControllerx/_n0157[34 : 0] on block EttusUsrpChinchWrapper
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ChinchLvFpgaInterfacex/ChinchRegisterAccessx/bResponseHeader[63 : 5] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus RequiredRegistersx/SignatureSrDataOut[23
+   : 10] on block EttusUsrpChinchWrapper is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   RequiredRegistersx/SignatureShiftRegister/cShiftReg[95]_cShiftReg[63]_mux_2_O
+   UT[87 : 10] on block EttusUsrpChinchWrapper is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   RequiredRegistersx/SignatureShiftRegister/cShiftReg[87 : 2] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus SwitchedChinchBimx/bRegisterOut_Data[48
+   : 32] on block EttusUsrpChinchWrapper is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   SwitchedChinchBimx/BimTransmitInterfacex/bRegisterOut_Data[55 : 0] on block
+   EttusUsrpChinchWrapper is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus bDmaCtCountArray<10 : 0> on block
+   LvFpga_Chinch_Interface is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus bIORG_WriteData<41 : 0> on block
+   LvFpga_Chinch_Interface is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus SwChBimRegPortMasterx/bRequestHeader<63
+   : 0> on block LvFpga_Chinch_Interface is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus IoPort2Restartx/bFpgaInUserModeDlyVec<6
+   : 0> on block LvFpga_Chinch_Interface is not reconstructed, because there are
+   some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file LvFpga_Chinch_Interface.edif ...
+ngc2edif: Total memory usage is 191716 kilobytes
+
+Release 14.7 - ngc2edif P_INT.20171106 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design hbdec1.ngc ...
+WARNING:NetListWriters:298 - No output is written to hbdec1.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file hbdec1.edif ...
+ngc2edif: Total memory usage is 113184 kilobytes
+
+Release 14.7 - ngc2edif P_INT.20171106 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design hbdec2.ngc ...
+WARNING:NetListWriters:298 - No output is written to hbdec2.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file hbdec2.edif ...
+ngc2edif: Total memory usage is 109684 kilobytes
+
+Release 14.7 - ngc2edif P_INT.20171106 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design hbdec3.ngc ...
+WARNING:NetListWriters:298 - No output is written to hbdec3.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file hbdec3.edif ...
+ngc2edif: Total memory usage is 108784 kilobytes
+
