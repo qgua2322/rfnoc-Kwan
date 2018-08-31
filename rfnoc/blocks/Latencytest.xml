@@ -4,8 +4,54 @@
   <name>Latencytest</name>
   <blockname>Latencytest</blockname>
   <ids>
-    <id revision="0">5555555566666666</id>
+    <id revision="0">5555555566666677</id>
   </ids>
+  <!-- Registers -->
+  <registers>
+    <setreg>
+      <name>SPP_SHIFT</name>
+      <address>128</address>
+    </setreg>
+  </registers>
+  <registers>
+    <setreg>
+      <name>PACKET_AVG_SIZE</name>
+      <address>130</address>
+    </setreg>
+  </registers>
+  <registers>
+    <setreg>
+      <name>PACKET_SHIFT</name>
+      <address>131</address>
+    </setreg>
+  </registers>
+  <!-- Args -->
+  <args>
+    <arg>
+      <name>spp_shift</name>
+      <type>int</type>
+      <value>1</value>
+      <check>GE($spp_shift, 1) AND LE($spp_shift, 16)</check>
+      <check_message>spp_shift is out of range.</check_message>
+      <action>SR_WRITE("SPP_SHIFT", $spp_shift)</action>
+    </arg>
+    <arg>
+      <name>packet_avg_size</name>
+      <type>int</type>
+      <value>128</value>
+      <check>GE($packet_avg_size, 32) AND LE($packet_avg_size, 4096)</check>
+      <check_message>packet_avg_size is out of range.</check_message>
+      <action>SR_WRITE("PACKET_AVG_SIZE", $packet_avg_size)</action>
+    </arg>
+    <arg>
+      <name>packet_shift</name>
+      <type>int</type>
+      <value>7</value>
+      <check>GE($packet_shift, 5) AND LE($packet_shift, 12)</check>
+      <check_message>packet_shift is out of range.</check_message>
+      <action>SR_WRITE("PACKET_SHIFT", $packet_shift)</action>
+    </arg>
+  </args>
   <!--One input, one output. If this is used, better have all the info the C++ file.-->
   <ports>
     <sink>

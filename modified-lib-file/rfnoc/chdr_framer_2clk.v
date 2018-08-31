@@ -43,7 +43,6 @@ module chdr_framer_2clk #(
   assign o_tvalid_debug = o_tvalid;
   assign o_tlast_debug = o_tlast;
   
-  (* dont_touch = "true",mark_debug ="true" *)
 
   //
   assign i_tready = header_i_tready & body_i_tready;

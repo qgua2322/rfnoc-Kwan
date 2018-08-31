@@ -23,7 +23,7 @@
 # Top-of-Makefile
 #-------------------------------------------------
 # Define BASE_DIR to point to the "top" dir
-BASE_DIR = $(FPGA_TOP_DIR)/usrp3/top
+BASE_DIR = $(FPGA_TOP_DIR)/usrp3/top/
 # Include viv_sim_preample after defining BASE_DIR
 include $(BASE_DIR)/../tools/make/viv_sim_preamble.mak
 
@@ -37,7 +37,10 @@ SIM_TOP = noc_block_Latencytest_tb
 # additional user created files
 SIM_SRCS = \
 $(abspath noc_block_Latencytest_tb.sv) \
-$(abspath ../../fpga-src/noc_block_Latencytest.v)
+$(abspath ../../fpga-src/noc_block_Latencytest.v) \
+$(abspath ../../fpga-src/noc_block_radio_core_modified.v) \
+$(abspath ../../fpga-src/radio_datapath_core_modified.v) \
+$(abspath ../../fpga-src/rx_control_gen3_modified.v)
 
 MODELSIM_USER_DO =
 

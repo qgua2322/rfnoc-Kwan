@@ -18,7 +18,14 @@
           ),
           $block_index,
           $device_index
-  )</make>
+)
+self.$(id).set_arg("spp_shift", $spp_shift)
+self.$(id).set_arg("packet_avg_size", $packet_avg_size)
+self.$(id).set_arg("packet_shift", $packet_shift)
+</make>
+<callback>set_arg("spp_shift", $spp_shift)</callback>
+<callback>set_arg("packet_avg_size", $packet_avg_size)</callback>
+<callback>set_arg("packet_shift", $packet_shift)</callback>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
@@ -101,6 +108,27 @@
       <name>Byte</name>
       <key>u8</key>
     </option>
+  </param>
+
+  <param>
+    <name>SPP_SHIFT</name>
+    <key>spp_shift</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>PACKET_AVG_SIZE</name>
+    <key>packet_avg_size</key>
+    <value>128</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>PACKET_SHIFT</name>
+    <key>packet_shift</key>
+    <value>7</value>
+    <type>int</type>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:

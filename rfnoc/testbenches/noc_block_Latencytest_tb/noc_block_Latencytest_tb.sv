@@ -29,12 +29,13 @@ module noc_block_Latencytest_tb();
   `TEST_BENCH_INIT("noc_block_Latencytest",`NUM_TEST_CASES,`NS_PER_TICK);
   localparam BUS_CLK_PERIOD = $ceil(1e9/166.67e6);
   localparam CE_CLK_PERIOD  = $ceil(1e9/200e6);
-  localparam NUM_CE         = 1;  // Number of Computation Engines / User RFNoC blocks to simulate
+  localparam NUM_CE         = 2;  // Number of Computation Engines / User RFNoC blocks to simulate
   localparam NUM_STREAMS    = 1;  // Number of test bench streams
   `RFNOC_SIM_INIT(NUM_CE, NUM_STREAMS, BUS_CLK_PERIOD, CE_CLK_PERIOD);
-  `RFNOC_ADD_BLOCK(noc_block_Latencytest, 0);
+  `RFNOC_ADD_BLOCK(noc_block_radio_core_modified, 0);
+  `RFNOC_ADD_BLOCK(noc_block_Latencytest, 1);
 
-  localparam SPP = 16; // Samples per packet
+  localparam SPP = 32; // Samples per packet
 
   /********************************************************
   ** Verification
@@ -43,6 +44,7 @@ module noc_block_Latencytest_tb();
     string s;
     logic [31:0] random_word;
     logic [63:0] readback;
+    logic [63:0] readback2;
 
     /********************************************************
     ** Test 1 -- Reset
@@ -59,14 +61,23 @@ module noc_block_Latencytest_tb();
     // Read NOC IDs
     tb_streamer.read_reg(sid_noc_block_Latencytest, RB_NOC_ID, readback);
     $display("Read Latencytest NOC ID: %16x", readback);
-    `ASSERT_ERROR(readback == noc_block_Latencytest.NOC_ID, "Incorrect NOC ID");
+    $display("Correct Latencytest NOC ID: %16x", noc_block_Latencytest.NOC_ID);
+
+    tb_streamer.read_reg(sid_noc_block_radio_core_modified, RB_NOC_ID, readback2);
+    $display("Read Radio_Core NOC ID: %16x", readback2);
+    $display("Correct Radio_Core NOC ID: %16x", noc_block_radio_core_modified.NOC_ID);
+
+    `ASSERT_ERROR(readback == noc_block_Latencytest.NOC_ID, "Incorrect Latencytest NOC ID");
+    `ASSERT_ERROR(readback2 == noc_block_radio_core_modified.NOC_ID, "Incorrect Radio core_modified NOC ID");
+
     `TEST_CASE_DONE(1);
 
     /********************************************************
     ** Test 3 -- Connect RFNoC blocks
     ********************************************************/
     `TEST_CASE_START("Connect RFNoC blocks");
-    `RFNOC_CONNECT(noc_block_tb,noc_block_Latencytest,SC16,SPP);
+    `RFNOC_CONNECT(noc_block_tb,noc_block_radio_core_modified,SC16,SPP);
+    `RFNOC_CONNECT(noc_block_radio_core_modified,noc_block_Latencytest,SC16,SPP);
     `RFNOC_CONNECT(noc_block_Latencytest,noc_block_tb,SC16,SPP);
     `TEST_CASE_DONE(1);
 
@@ -75,7 +86,7 @@ module noc_block_Latencytest_tb();
     ********************************************************/
     `TEST_CASE_START("Write / readback user registers");
     random_word = $random();
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_TEST_REG_0, random_word);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, random_word);
     tb_streamer.read_user_reg(sid_noc_block_Latencytest, 0, readback);
     $sformat(s, "User register 0 incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
     `ASSERT_ERROR(readback[31:0] == random_word, s);
@@ -84,6 +95,7 @@ module noc_block_Latencytest_tb();
     tb_streamer.read_user_reg(sid_noc_block_Latencytest, 1, readback);
     $sformat(s, "User register 1 incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
     `ASSERT_ERROR(readback[31:0] == random_word, s);
+    
     `TEST_CASE_DONE(1);
 
     /********************************************************
@@ -92,6 +104,18 @@ module noc_block_Latencytest_tb();
     // Latencytest's user code is a loopback, so we should receive
     // back exactly what we send
     `TEST_CASE_START("Test sequence");
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, 5);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_AVG_SIZE, 128);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_SHIFT, 7);
+    tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_MAXLEN, 32'(SPP),0);
+    tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_COMMAND, 32'he0000001,0);
+    tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_TIME_HI, 32'h0,0);
+    tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_TIME_LO, 32'h0,0);
+
+    $display("Start simulation");
+    
+    #500000;
+    /*
     fork
       begin
         cvita_payload_t send_payload;
@@ -112,6 +136,7 @@ module noc_block_Latencytest_tb();
         end
       end
     join
+    */
     `TEST_CASE_DONE(1);
     `TEST_BENCH_DONE;
 

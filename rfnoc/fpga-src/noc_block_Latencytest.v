@@ -21,19 +21,18 @@
 
 //
 module noc_block_Latencytest #(
-  parameter NOC_ID = 64'h5555555566666666,
+  parameter NOC_ID = 64'h5555555566666677,
   parameter STR_SINK_FIFOSIZE = 11)
 (
   input bus_clk, input bus_rst,
   input ce_clk, input ce_rst,
   input  [63:0] i_tdata, input  i_tlast, input  i_tvalid, output i_tready,
   output [63:0] o_tdata, output o_tlast, output o_tvalid, input  o_tready,
-  input [63:0] vita_time_input, output [63:0] debug
+  output [63:0] debug, input [63:0] shared_time
 );
   //Input debug wire 
   //(* dont_touch = "true",mark_debug ="true" *) wire [63:0]      i_tdata_temp;
   //(* dont_touch = "true",mark_debug ="true" *) wire         i_tlast_temp, i_tvalid_temp, i_tready_temp;
-
   //assign i_tdata_temp = i_tdata;
   //assign i_tlast_temp = i_tlast;
   //assign i_tvalid_temp = i_tvalid;
@@ -178,15 +177,17 @@ module noc_block_Latencytest #(
   //               _____
   //   rb_stb  ___|     |________________     (Invalid / ignored, same cycle as set_stb)
   //
-  localparam [7:0] SR_TEST_REG_0 = SR_USER_REG_BASE;
+  localparam [7:0] SR_SPP_SHIFT = SR_USER_REG_BASE;
   localparam [7:0] SR_TEST_REG_1 = SR_USER_REG_BASE + 8'd1;
+  localparam [7:0] SR_PACKET_AVG_SIZE = SR_USER_REG_BASE + 8'd2;
+  localparam [7:0] SR_PACKET_SHIFT = SR_USER_REG_BASE + 8'd3;
 
-  wire [31:0] test_reg_0;
+  wire [31:0] spp_shift;
   setting_reg #(
-    .my_addr(SR_TEST_REG_0), .awidth(8), .width(32))
-  sr_test_reg_0 (
+    .my_addr(SR_SPP_SHIFT), .awidth(8), .width(32), .at_reset(16))
+  sr_spp_shift (
     .clk(ce_clk), .rst(ce_rst),
-    .strobe(set_stb), .addr(set_addr), .in(set_data), .out(test_reg_0), .changed());
+    .strobe(set_stb), .addr(set_addr), .in(set_data), .out(spp_shift), .changed());
 
   wire [31:0] test_reg_1;
   setting_reg #(
@@ -194,13 +195,30 @@ module noc_block_Latencytest #(
   sr_test_reg_1 (
     .clk(ce_clk), .rst(ce_rst),
     .strobe(set_stb), .addr(set_addr), .in(set_data), .out(test_reg_1), .changed());
+  
+  wire [31:0] packet_avg_size;
+  setting_reg #(
+    .my_addr(SR_PACKET_AVG_SIZE), .awidth(8), .width(32), .at_reset(16))
+  sr_packet_avg_size (
+    .clk(ce_clk), .rst(ce_rst),
+    .strobe(set_stb), .addr(set_addr), .in(set_data), .out(packet_avg_size), .changed());
+  
+  wire [31:0] packet_shift;
+  setting_reg #(
+    .my_addr(SR_PACKET_SHIFT), .awidth(8), .width(32), .at_reset(4))
+  sr_packet_shift (
+    .clk(ce_clk), .rst(ce_rst),
+    .strobe(set_stb), .addr(set_addr), .in(set_data), .out(packet_shift), .changed());
+  
 
   // Readback registers
   // rb_stb set to 1'b1 on NoC Shell
   always @(posedge ce_clk) begin
     case(rb_addr)
-      8'd0 : rb_data <= {32'd0, test_reg_0};
+      8'd0 : rb_data <= {32'd0, spp_shift};
       8'd1 : rb_data <= {32'd0, test_reg_1};
+      8'd2 : rb_data <= {32'd0, packet_avg_size};
+      8'd3 : rb_data <= {32'd0, packet_shift};
       default : rb_data <= 64'h0BADC0DE0BADC0DE;
     endcase
   end
@@ -212,9 +230,9 @@ module noc_block_Latencytest #(
   
 
   
-  //Shift_Register(depth=4) with AXI
-  shiftRegiste_4 #(.PACKET_LENGTH(32))
-    shiftRegiste_4_1(
+  //Avg latency block with AXI
+  latencyReport #(.PACKET_LENGTH(32))
+    latencyReport(
       .clk(ce_clk),
       .reset(ce_rst),
       .clear_tx_seqnum(clear_tx_seqnum), 
@@ -224,58 +242,123 @@ module noc_block_Latencytest #(
       .s_axis_data_tlast(s_axis_data_tlast), .s_axis_data_tdata(s_axis_data_tdata),
       .s_axis_data_tvalid(s_axis_data_tvalid), .s_axis_data_tready(s_axis_data_tready),
       .s_axis_data_tuser(s_axis_data_tuser),
-      .timer(vita_time_input), .header(header_wire),
-      .incoming_axi_timestamp(), .incoming_ce_timestamp()
+      .timer(shared_time), .header(header_wire),
+      .SPP_SHIFT(spp_shift), .PACKET_AVG_SIZE(packet_avg_size), .PACKET_SHIFT(packet_shift)
     );
 
 endmodule
 
-module shiftRegiste_4 #(
+module latencyReport #(
     parameter PACKET_LENGTH = 32
   )(
-    input  reset, input  clk, input  clear_tx_seqnum, 
-    input  m_axis_data_tlast, input  [31:0] m_axis_data_tdata,
+    input  clk, input reset  , input  clear_tx_seqnum, 
+    input  m_axis_data_tlast, input  [PACKET_LENGTH-1:0] m_axis_data_tdata,
     input  m_axis_data_tvalid, output  m_axis_data_tready,
     input  [127:0] m_axis_data_tuser,
-    output  s_axis_data_tlast, output  [31:0] s_axis_data_tdata,
+    output  s_axis_data_tlast, output  [PACKET_LENGTH-1:0] s_axis_data_tdata,
     output  s_axis_data_tvalid, input  s_axis_data_tready,
     output  [127:0] s_axis_data_tuser,
     input  [63:0] timer,input [63:0] header,
-    input  [63:0] incoming_axi_timestamp, input [63:0] incoming_ce_timestamp
+    input  [31:0] SPP_SHIFT, input [31:0] PACKET_AVG_SIZE, input [8:0] PACKET_SHIFT 
   );
   //Axi_fifo_interface wire
-  wire [31:0] pipe_in_tdata;
-  wire pipe_in_tvalid, pipe_in_tlast;
-  wire pipe_in_tready;
+  (* dont_touch = "true",mark_debug ="true" *) wire [63:0] rx_timestamp;
+  (* dont_touch = "true",mark_debug ="true" *) wire [63:0] current_timestamp;
+  assign rx_timestamp = m_axis_data_tuser[63:0];
+  assign current_timestamp = timer[63:0];
 
-  wire [31:0] pipe_out_tdata;
-  wire pipe_out_tvalid, pipe_out_tlast;
-  wire pipe_out_tready;
-  wire [127:0] pipe_out_tuser;
-  
-  reg [PACKET_LENGTH+33 :0 ] reg1;
-  reg [PACKET_LENGTH+33 :0 ] reg2;
-  reg [PACKET_LENGTH+33 :0 ] reg3;
-  reg [PACKET_LENGTH+33 :0 ] reg4;
+  reg [15:0] packet_counter = 16'h0;
+  reg counter_reset = 1'b0;
+  reg ready2send = 1'b0;
+  reg [63:0] avg_packet_latency = 64'h0;
+  reg [63:0] avg_sample_latency = 64'h0;
+  reg [63:0] last_avg_packet_latency = 64'h0;
+  reg [63:0] last_avg_sample_latency = 64'h0;
+  wire [15:0] SAMPLE_SHIFT = PACKET_SHIFT + SPP_SHIFT;
+
+  reg [1:0] FSM_state;
+  localparam [1:0] ST_IDLE = 0;
+  localparam [1:0] ST_COUTING = 1;
+
+  reg [1:0] FSM_send_state;
+  localparam [1:0] ST_SEND_IDLE = 2;
+  localparam [1:0] ST_SAMPLE = 3;
+  localparam [1:0] ST_PACKET = 4;
 
 
-  always @(posedge clk or negedge reset) begin
-    if (reset) begin 
-      reg1 <= 0;
-      reg2 <= 0;
-      reg3 <= 0;
-      reg4 <= 0;
-    end else if (clk && s_axis_data_tready) begin
-      reg1 <= {m_axis_data_tlast,m_axis_data_tvalid,m_axis_data_tuser[31:0],m_axis_data_tdata}; 
-      reg2 <= reg1;
-      reg3 <= reg2;
-      reg4 <= reg3;
+  //Couting FSM
+  always @(posedge clk) begin
+    if(reset) begin
+      FSM_state <= ST_IDLE;
+      packet_counter <= 16'h0;
+      avg_packet_latency <= 64'h0;
+      avg_sample_latency <= 64'h0;
+    end else begin
+      case(FSM_state)
+      ST_IDLE:begin
+        avg_packet_latency <= 64'h0;
+        avg_sample_latency <= 64'h0;
+        packet_counter <= 16'h0;
+        
+        if(m_axis_data_tvalid == 1'b1) begin 
+          FSM_state <= ST_COUTING;
+        end else begin
+          FSM_state <= ST_IDLE;
+        end 
+      end
+      ST_COUTING: begin
+        if (m_axis_data_tvalid == 1'b1) begin
+          avg_sample_latency <= avg_sample_latency + timer[31:0] - m_axis_data_tdata;
+          if (m_axis_data_tlast == 1'b1) begin
+              avg_packet_latency <= avg_packet_latency + timer - m_axis_data_tuser[63:0];
+              packet_counter <= packet_counter +1;
+              if(packet_counter == PACKET_AVG_SIZE)begin
+                last_avg_packet_latency <= (avg_packet_latency >>PACKET_SHIFT);
+                last_avg_sample_latency <= (avg_sample_latency >>SAMPLE_SHIFT);
+                ready2send <= 1'b1;
+                FSM_state <= ST_IDLE;
+              end else begin
+                FSM_state <= ST_COUTING;
+              end
+          end
+        end
+      end  
+      endcase
+    end
+  end 
+
+  //Sending FSM
+  always @(posedge clk) begin
+    if(reset)begin
+      FSM_send_state <= ST_SEND_IDLE;
+    end else begin
+      case(FSM_send_state)
+      ST_SEND_IDLE: begin
+        if(ready2send == 1'b1) begin
+          FSM_send_state <= ST_SAMPLE;
+        end else begin
+          FSM_send_state <= ST_SEND_IDLE;
+        end
+      end
+      ST_SAMPLE: begin
+        if(s_axis_data_tready == 1'b1) begin
+          FSM_send_state <= ST_PACKET;
+        end else begin
+          FSM_send_state <= ST_SAMPLE;
+        end
+      end
+      ST_PACKET: begin
+          ready2send <= 1'b0;
+          FSM_send_state <= ST_SEND_IDLE;
+      end
+      endcase
     end
   end
+  
 
-  assign s_axis_data_tlast = reg4[PACKET_LENGTH+33];
-  assign s_axis_data_tvalid = reg4[PACKET_LENGTH+32];
-  assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
-  assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = {header,timer[31:0],reg4[PACKET_LENGTH+31:PACKET_LENGTH]};     
+  assign s_axis_data_tlast = (FSM_send_state == ST_PACKET) ? 1:0;
+  assign s_axis_data_tvalid = ((FSM_send_state == ST_SAMPLE) | (FSM_send_state == ST_PACKET)) ? 1:0;
+  assign s_axis_data_tdata =  (FSM_send_state == ST_PACKET) ? last_avg_packet_latency[31:0] : (FSM_send_state == ST_SAMPLE) ? last_avg_sample_latency[31:0]:0 ;
+  assign m_axis_data_tready = 1'b1;
+  assign s_axis_data_tuser = {header,timer[63:0]};     
 endmodule
