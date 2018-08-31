@@ -35,7 +35,7 @@ module noc_block_Latencytest_tb();
   `RFNOC_ADD_BLOCK(noc_block_radio_core_modified, 0);
   `RFNOC_ADD_BLOCK(noc_block_Latencytest, 1);
 
-  localparam SPP = 32; // Samples per packet
+  localparam SPP = 64; // Samples per packet
 
   /********************************************************
   ** Verification
@@ -104,7 +104,7 @@ module noc_block_Latencytest_tb();
     // Latencytest's user code is a loopback, so we should receive
     // back exactly what we send
     `TEST_CASE_START("Test sequence");
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, 5);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, 6);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_AVG_SIZE, 128);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_SHIFT, 7);
     tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_MAXLEN, 32'(SPP),0);
@@ -115,28 +115,7 @@ module noc_block_Latencytest_tb();
     $display("Start simulation");
     
     #500000;
-    /*
-    fork
-      begin
-        cvita_payload_t send_payload;
-        for (int i = 0; i < SPP/2; i++) begin
-          send_payload.push_back(64'(i));
-        end
-        tb_streamer.send(send_payload);
-      end
-      begin
-        cvita_payload_t recv_payload;
-        cvita_metadata_t md;
-        logic [63:0] expected_value;
-        tb_streamer.recv(recv_payload,md);
-        for (int i = 0; i < SPP/2; i++) begin
-          expected_value = i;
-          $sformat(s, "Incorrect value received! Expected: %0d, Received: %0d", expected_value, recv_payload[i]);
-          `ASSERT_ERROR(recv_payload[i] == expected_value, s);
-        end
-      end
-    join
-    */
+    
     `TEST_CASE_DONE(1);
     `TEST_BENCH_DONE;
 

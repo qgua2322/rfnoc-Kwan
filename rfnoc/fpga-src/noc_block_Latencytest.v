@@ -281,9 +281,9 @@ module latencyReport #(
   localparam [1:0] ST_COUTING = 1;
 
   reg [1:0] FSM_send_state;
-  localparam [1:0] ST_SEND_IDLE = 2;
-  localparam [1:0] ST_SAMPLE = 3;
-  localparam [1:0] ST_PACKET = 4;
+  localparam [1:0] ST_SEND_IDLE = 0;
+  localparam [1:0] ST_SAMPLE = 1;
+  localparam [1:0] ST_PACKET = 2;
 
 
   //Couting FSM
@@ -299,7 +299,7 @@ module latencyReport #(
         avg_packet_latency <= 64'h0;
         avg_sample_latency <= 64'h0;
         packet_counter <= 16'h0;
-        
+        ready2send <= 1'b0;
         if(m_axis_data_tvalid == 1'b1) begin 
           FSM_state <= ST_COUTING;
         end else begin
@@ -348,7 +348,6 @@ module latencyReport #(
         end
       end
       ST_PACKET: begin
-          ready2send <= 1'b0;
           FSM_send_state <= ST_SEND_IDLE;
       end
       endcase
