@@ -15,8 +15,8 @@ make install
 ```
 
 # Importance file:
-GNU Radio block decleartion                 : ./grc/  
-Modified USRP3 lib                          : ./modified-lib-file/  
-UHD block decleartion                       : ./rfnoc/blocks/  
-Latencytest IP & simulation lib             : ./rfnoc/fpga-src/  
-Testbench file                              : ./rfnoc/testbenches/  
+- GNU Radio block decleartion                 : ./grc/  
+- Modified USRP3 lib                          : ./modified-lib-file/  
+- UHD block decleartion                       : ./rfnoc/blocks/  
+- Latencytest IP & simulation lib             : ./rfnoc/fpga-src/  
+- Testbench file                              : ./rfnoc/testbenches/  

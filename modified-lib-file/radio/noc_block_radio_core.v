@@ -26,17 +26,11 @@ module noc_block_radio_core #(
   output [NUM_CHANNELS*32-1:0] tx, input [NUM_CHANNELS-1:0] tx_stb, output [NUM_CHANNELS-1:0] tx_running,
   // Interfaces to front panel and daughter board
   input pps, input sync_in, output sync_out,
-  output [63:0] debug
+  output [63:0] debug ,output [63:0] shared_time 
 );
 
-  //Output debug wire
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]      o_tdata_temp;
-  //(* dont_touch = "true",mark_debug ="true" *) wire         o_tlast_temp, o_tvalid_temp, o_tready_temp;
-
-  assign o_tdata_temp = o_tdata;
-  //assign o_tlast = o_tlast_temp;
-  //assign o_tvalid = o_tvalid_temp;
-  //assign o_tready = o_tready_temp;
+  (* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0] rx_stb_debug;
+  assign rx_stb_debug = rx_stb;
 
   ////////////////////////////////////////////////////////////
   //
@@ -55,12 +49,9 @@ module noc_block_radio_core #(
 
   wire [64*NUM_CHANNELS-1:0]      str_sink_tdata;
   wire [NUM_CHANNELS-1:0]         str_sink_tlast, str_sink_tvalid, str_sink_tready;
-  //wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
+  wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
   wire [NUM_CHANNELS-1:0]         str_src_tlast, str_src_tvalid, str_src_tready;
   
-  (* dont_touch = "true",mark_debug ="true" *) wire [64*NUM_CHANNELS-1:0]      str_src_tdata;
-  //(* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]         str_src_tlast, str_src_tvalid, str_src_tready;
-
   wire [63:0]                     vita_time;
   wire [NUM_CHANNELS-1:0]         clear_tx_seqnum;
   wire [16*NUM_CHANNELS-1:0]      src_sid, next_dst_sid, resp_in_dst_sid, resp_out_dst_sid;
@@ -105,11 +96,11 @@ module noc_block_radio_core #(
   wire [NUM_CHANNELS-1:0]     m_axis_data_tready;
 
    wire [31:0]                 s_axis_data_tdata[0:NUM_CHANNELS-1];
-  (* dont_touch = "true",mark_debug ="true" *) wire [31:0]                 s_axis_data_tdata_temp[0:NUM_CHANNELS-1];
-  (* dont_touch = "true",mark_debug ="true" *) wire [127:0]                s_axis_data_tuser[0:NUM_CHANNELS-1];
-  (* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]     s_axis_data_tlast;
-  (* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]     s_axis_data_tvalid;
-  (* dont_touch = "true",mark_debug ="true" *) wire [NUM_CHANNELS-1:0]     s_axis_data_tready;
+   wire [31:0]                 s_axis_data_tdata_temp[0:NUM_CHANNELS-1];
+   wire [127:0]                s_axis_data_tuser[0:NUM_CHANNELS-1];
+   wire [NUM_CHANNELS-1:0]     s_axis_data_tlast;
+   wire [NUM_CHANNELS-1:0]     s_axis_data_tvalid;
+   wire [NUM_CHANNELS-1:0]     s_axis_data_tready;
 
   wire [NUM_CHANNELS*64-1:0]  resp_tdata;
   wire [NUM_CHANNELS-1:0]     resp_tlast, resp_tvalid, resp_tready;
@@ -150,7 +141,7 @@ module noc_block_radio_core #(
     
   //debug timekeeper;
   reg [63:0] simple_counter = 64'h0;
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0] simple_counter_debug;
+  wire [63:0] simple_counter_debug;
   assign simple_counter_debug = simple_counter;
   always @(posedge ce_clk ) begin 
     if (start_count == 1'b1) begin
@@ -159,20 +150,21 @@ module noc_block_radio_core #(
   end
   
   //debug timekeeper_slow;
-    reg [63:0] simple_counter_slow = 64'h0;
-    (* dont_touch = "true",mark_debug ="true" *) wire [63:0] simple_counter_slow_debug;
-    assign simple_counter_slow_debug = simple_counter_slow;
-    always @(posedge bus_clk ) begin
-      if (start_count == 1'b1) begin 
-        simple_counter_slow <= simple_counter_slow+1;
-      end 
-    end
+  reg [63:0] simple_counter_slow = 64'h0;
+  wire [63:0] simple_counter_slow_debug;
+  assign simple_counter_slow_debug = simple_counter_slow;
+  always @(posedge bus_clk ) begin
+    if (start_count == 1'b1) begin 
+      simple_counter_slow <= simple_counter_slow+1;
+    end 
+  end
 
   // VITA time is shared between radio cores
   `include "radio_core_regs.vh"
   wire [63:0] vita_time_lastpps;
-  //(* dont_touch = "true",mark_debug ="true" *) wire [63:0] vita_time_debug;
+  wire [63:0] vita_time_debug;
   assign vita_time_debug = vita_time;
+  assign shared_time = vita_time;
   timekeeper #(
     .SR_TIME_HI(SR_TIME_HI),
     .SR_TIME_LO(SR_TIME_LO),
@@ -193,21 +185,6 @@ module noc_block_radio_core #(
   assign db_fe_set_addr = set_addr;
   assign db_fe_set_data = set_data;
   assign db_fe_rb_addr  = rb_addr;
-  
-  
-
-  //Marker
-  reg [31:0] marker_id = 32'h0;
-  wire [31:0] marker = (s_axis_data_tlast[0] == 1'b1) ? marker_id : 32'habcdbeef ;
-  always @(posedge ce_clk)begin
-    if(ce_rst == 1'b1) begin
-      marker_id<=32'h0;
-    end else begin
-      if(s_axis_data_tlast[0] == 1'b1) begin
-        marker_id <= marker_id +1;
-      end
-    end
-  end
 
   genvar i;
   generate
@@ -249,8 +226,8 @@ module noc_block_radio_core #(
         .m_axis_config_tvalid(),
         .m_axis_config_tready(1'b0)
       );
-        assign s_axis_data_tdata_temp[i] =  (s_axis_data_tuser[i][127:124] == 4'b0010) ? marker : s_axis_data_tdata[i] ;
-        
+      
+      assign s_axis_data_tdata_temp[i] = (s_axis_data_tuser[i][127:124] == 4'b0010) ? vita_time[31:0]:s_axis_data_tdata[i];
       radio_datapath_core #(
         .RADIO_NUM(i)
       ) radio_datapath_core_i (

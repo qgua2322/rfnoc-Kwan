@@ -12,14 +12,10 @@
       <name>SPP_SHIFT</name>
       <address>128</address>
     </setreg>
-  </registers>
-  <registers>
     <setreg>
       <name>PACKET_AVG_SIZE</name>
       <address>130</address>
     </setreg>
-  </registers>
-  <registers>
     <setreg>
       <name>PACKET_SHIFT</name>
       <address>131</address>

@@ -19,7 +19,7 @@ module noc_block_ddc #(
   input ce_clk, input ce_rst,
   input  [63:0] i_tdata, input  i_tlast, input  i_tvalid, output i_tready,
   output [63:0] o_tdata, output o_tlast, output o_tvalid, input  o_tready,
-  output [63:0] debug
+  output [63:0] debug, input [63:0] shared_time
 );
 
   ////////////////////////////////////////////////////////////

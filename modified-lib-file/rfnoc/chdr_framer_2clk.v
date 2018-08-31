@@ -23,20 +23,20 @@ module chdr_framer_2clk #(
   output [63:0] o_tdata, output o_tlast, output o_tvalid, input o_tready
 );
 
-  (* dont_touch = "true",mark_debug ="true" *) wire          header_i_tvalid, header_i_tready;
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]   body_i_tdata;
-  (* dont_touch = "true",mark_debug ="true" *) wire          body_i_tlast, body_i_tvalid, body_i_tready;
+   wire          header_i_tvalid, header_i_tready;
+   wire [63:0]   body_i_tdata;
+   wire          body_i_tlast, body_i_tvalid, body_i_tready;
 
-  (* dont_touch = "true",mark_debug ="true" *) wire [127:0]  header_o_tdata;
-  (* dont_touch = "true",mark_debug ="true" *) wire          header_o_tvalid, header_o_tready;
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0]   body_o_tdata;
-  (* dont_touch = "true",mark_debug ="true" *) wire          body_o_tlast, body_o_tvalid, body_o_tready;
+   wire [127:0]  header_o_tdata;
+   wire          header_o_tvalid, header_o_tready;
+   wire [63:0]   body_o_tdata;
+   wire          body_o_tlast, body_o_tvalid, body_o_tready;
   reg  [15:0]   length;
   reg  [11:0]   seqnum;
   
-  (* dont_touch = "true",mark_debug ="true" *) wire i_tready_debug;
-  (* dont_touch = "true",mark_debug ="true" *) wire o_tvalid_debug, o_tlast_debug, o_tready_debug;
-  (* dont_touch = "true",mark_debug ="true" *) wire [63:0] o_tdata_debug;
+   wire i_tready_debug;
+   wire o_tvalid_debug, o_tlast_debug, o_tready_debug;
+   wire [63:0] o_tdata_debug;
   assign i_tready_debug = i_tready;
   assign o_tready_debug = o_tready;
   assign o_tdata_debug = o_tdata;
