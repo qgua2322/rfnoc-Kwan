@@ -4,16 +4,22 @@ library(reshape2)
 
 NUM_PACKETS_TO_TAKE <- 25000
 
+unroll <- function(x,s) {
+    x$V2 <- x$V3 - s
+    x <- x[rep(row.names(x), s),]
+    x
+}
+
 load_data <- function(s,n) {
     tmp <- read.csv(paste(s," rawdata.csv",sep=""),header=F,sep=",",stringsAsFactors=F)
     
-    # remove outliers
-    tmp <- tmp[tmp$V2 < 400,]
+    # replicate rows for packet to sample df transformation
+    tmp <- unroll(tmp,s)
 
-    tmp <- tmp[sample(nrow(tmp),n),]
+    # tmp <- tmp[sample(nrow(tmp),n),]
     colnames(tmp) <- c("id","sample_latency","packet_latency")
     tmp$spp <- as.factor(s)
-    print(paste("SPP = ",s,", NUM PACKETS = ",nrow(tmp),sep=""))
+    print(paste("SPP = ",s,", NUM SAMPLES = ",nrow(tmp),sep=""))
     tmp
 }
 
@@ -37,8 +43,10 @@ head(data)
 pdf("spp_sample_latency_histograms.pdf",width=12,height=7)
 ggplot(data,aes(sample_latency_us,fill=spp)) +
     geom_density(alpha=0.2) +
+    # geom_histogram(alpha=0.2,binwidth=0.01) +
     xlab("Sample Latency (us)") +
     ylab("Density Count") +
+    # scale_y_log10("Density Count") +
     # scale_fill_grey() +
     # scale_fill_manual(values = c("LSTM Prediction Error     " = "white", "Naive Prediction Error     " = "#000000")) +
     theme_minimal() +
