@@ -88,12 +88,12 @@ module noc_block_Latencytest_tb();
     random_word = $random();
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, random_word);
     tb_streamer.read_user_reg(sid_noc_block_Latencytest, 0, readback);
-    $sformat(s, "User register 0 incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
+    $sformat(s, "User SPP_SHIFT_REG incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
     `ASSERT_ERROR(readback[31:0] == random_word, s);
     random_word = $random();
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_TEST_REG_1, random_word);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_LIMIT, random_word);
     tb_streamer.read_user_reg(sid_noc_block_Latencytest, 1, readback);
-    $sformat(s, "User register 1 incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
+    $sformat(s, "User PACKET_LIMIT_REG incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
     `ASSERT_ERROR(readback[31:0] == random_word, s);
     
     `TEST_CASE_DONE(1);
@@ -105,8 +105,9 @@ module noc_block_Latencytest_tb();
     // back exactly what we send
     `TEST_CASE_START("Test sequence");
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, 6);
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_AVG_SIZE, 128);
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_SHIFT, 7);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_LIMIT, 10);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_AVG_SIZE, 64);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_SHIFT, 6);
     tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_MAXLEN, 32'(SPP),0);
     tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_COMMAND, 32'he0000001,0);
     tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_TIME_HI, 32'h0,0);

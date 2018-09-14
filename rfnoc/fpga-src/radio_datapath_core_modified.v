@@ -29,7 +29,7 @@ module radio_datapath_core_modified #(
   output reg rb_stb, input [7:0] rb_addr, output reg [63:0] rb_data, input rb_holdoff,
   input [31:0] tx_tdata, input tx_tlast, input tx_tvalid, output tx_tready, input [127:0] tx_tuser,
   output [31:0] rx_tdata, output rx_tlast, output rx_tvalid, input rx_tready, output [127:0] rx_tuser,
-  output [63:0] resp_tdata, output resp_tlast, output resp_tvalid, input resp_tready 
+  output [63:0] resp_tdata, output resp_tlast, output resp_tvalid, input resp_tready, output send_imm_debug
 );
 
   `include "radio_core_regs.vh"
@@ -111,7 +111,7 @@ module radio_datapath_core_modified #(
     .set_stb(set_stb), .set_addr(set_addr), .set_data(set_data),
     .rx_tdata(rx_tdata), .rx_tlast(rx_tlast), .rx_tvalid(rx_tvalid), .rx_tready(rx_tready), .rx_tuser(rx_tuser),
     .resp_tdata(rxresp_tdata), .resp_tlast(rxresp_tlast), .resp_tvalid(rxresp_tvalid), .resp_tready(rxresp_tready), .resp_tuser(rxresp_tuser),
-    .strobe(sample_rx_stb), .sample(sample_rx), .run(rx_running));
+    .strobe(sample_rx_stb), .sample(sample_rx), .run(rx_running), .send_imm_debug(send_imm_debug));
 
   // Generate error response packets from TX & RX control
   axi_packet_mux #(.NUM_INPUTS(2), .FIFO_SIZE(1)) axi_packet_mux (

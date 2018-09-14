@@ -188,8 +188,9 @@ module noc_block_radio_core_modified #(
   assign db_fe_rb_addr  = rb_addr;
 
   //Envoirment setting signal 
-  wire [1:0]rx_stb_debug  = 2'b01;
+  wire [1:0] rx_stb_debug  = 2'b01;
   wire [63:0] rx_debug = {32'h0,vita_time[31:0]};
+  wire [1:0] send_imm_debug;
 
   genvar i;
   generate
@@ -218,7 +219,7 @@ module noc_block_radio_core_modified #(
         .m_axis_data_tlast(m_axis_data_tlast[i]),
         .m_axis_data_tvalid(m_axis_data_tvalid[i]),
         .m_axis_data_tready(m_axis_data_tready[i]),
-        .s_axis_data_tdata(s_axis_data_tdata[i]),
+        .s_axis_data_tdata(s_axis_data_tdata_temp[i]),
         .s_axis_data_tuser(s_axis_data_tuser[i]),
         .s_axis_data_tlast(s_axis_data_tlast[i]),
         .s_axis_data_tvalid(s_axis_data_tvalid[i]),
@@ -231,8 +232,9 @@ module noc_block_radio_core_modified #(
         .m_axis_config_tvalid(),
         .m_axis_config_tready(1'b0)
       );
-        
-        
+      
+      assign s_axis_data_tdata_temp[i] =  (s_axis_data_tuser[i][127:124]== 4'b0010) ? vita_time[31:0] : s_axis_data_tdata[i];  
+
       radio_datapath_core_modified #(
         .RADIO_NUM(i)
       ) radio_datapath_core_modified_i (
@@ -249,7 +251,8 @@ module noc_block_radio_core_modified #(
         .rb_stb(rb_stb_dp[i]), .rb_addr(rb_addr[8*i+7:8*i]), .rb_data(rb_data_dp[64*i+63:64*i]), .rb_holdoff(~db_fe_rb_stb[i]),
         .tx_tdata(m_axis_data_tdata[i]), .tx_tlast(m_axis_data_tlast[i]), .tx_tvalid(m_axis_data_tvalid[i]), .tx_tready(m_axis_data_tready[i]), .tx_tuser(m_axis_data_tuser[i]),
         .rx_tdata(s_axis_data_tdata[i]), .rx_tlast(s_axis_data_tlast[i]), .rx_tvalid(s_axis_data_tvalid[i]), .rx_tready(s_axis_data_tready[i]), .rx_tuser(s_axis_data_tuser[i]),
-        .resp_tdata(resp_tdata[64*i+63:64*i]), .resp_tlast(resp_tlast[i]), .resp_tvalid(resp_tvalid[i]), .resp_tready(resp_tready[i])
+        .resp_tdata(resp_tdata[64*i+63:64*i]), .resp_tlast(resp_tlast[i]), .resp_tvalid(resp_tvalid[i]), .resp_tready(resp_tready[i]), 
+        .send_imm_debug(send_imm_debug[i])
       );
 
       // Readback Radio Register

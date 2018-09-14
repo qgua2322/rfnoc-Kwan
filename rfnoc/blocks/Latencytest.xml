@@ -13,6 +13,10 @@
       <address>128</address>
     </setreg>
     <setreg>
+      <name>PACKET_LIMIT</name>
+      <address>129</address>
+    </setreg>
+    <setreg>
       <name>PACKET_AVG_SIZE</name>
       <address>130</address>
     </setreg>
@@ -30,6 +34,12 @@
       <check>GE($spp_shift, 1) AND LE($spp_shift, 16)</check>
       <check_message>spp_shift is out of range.</check_message>
       <action>SR_WRITE("SPP_SHIFT", $spp_shift)</action>
+    </arg>
+    <arg>
+      <name>packet_limit</name>
+      <type>int</type>
+      <value>2560</value>
+      <action>SR_WRITE("PACKET_LIMIT", $packet_limit)</action>
     </arg>
     <arg>
       <name>packet_avg_size</name>

@@ -29,7 +29,7 @@ module rx_control_gen3_modified #(
   // Error packets, Note: Currently unused as error packets must come inline with data.
   output reg [63:0] resp_tdata, output reg [127:0] resp_tuser, output reg resp_tlast, output reg resp_tvalid, input resp_tready,
   // From radio frontend
-  output run, input [31:0] sample, input strobe 
+  output run, input [31:0] sample, input strobe , output send_imm_debug
 );
 
   reg [31:0] rx_reg_tdata, error;
@@ -44,6 +44,7 @@ module rx_control_gen3_modified #(
   wire store_command;
 
   wire send_imm, chain, reload, stop;
+  assign send_imm_debug = send_imm;
   wire [27:0] numlines;
   wire [63:0] rcvtime;
   wire use_timestamps;
