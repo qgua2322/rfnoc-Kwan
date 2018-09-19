@@ -1,6 +1,6 @@
 RFNOC_PATH 		:= ~/rfnoc
 
-all:copy_xml install
+all: install overwrite_lib_file
 
 copy_xml:
 	@cp rfnoc/blocks/Latencytest.xml $(RFNOC_PATH)/share/uhd/rfnoc/blocks/
@@ -21,9 +21,9 @@ compile:
 	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos)
 
 compile-debug:
-	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest ddc --GUI -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/)
+	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest --GUI -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/)
 
-compile-all:
+compile--clean-all:
 	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos --clean-all)
 
 sim:
