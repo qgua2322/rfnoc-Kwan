@@ -9,7 +9,7 @@
   <!-- Registers -->
   <registers>
     <setreg>
-      <name>SPP_SHIFT</name>
+      <name>SPP_SIZE</name>
       <address>128</address>
     </setreg>
     <setreg>
@@ -28,12 +28,10 @@
   <!-- Args -->
   <args>
     <arg>
-      <name>spp_shift</name>
+      <name>spp_size</name>
       <type>int</type>
       <value>1</value>
-      <check>GE($spp_shift, 1) AND LE($spp_shift, 16)</check>
-      <check_message>spp_shift is out of range.</check_message>
-      <action>SR_WRITE("SPP_SHIFT", $spp_shift)</action>
+      <action>SR_WRITE("SPP_SIZE", $spp_size)</action>
     </arg>
     <arg>
       <name>packet_limit</name>

@@ -105,6 +105,114 @@
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(240, 156)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>Total_sample</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>1024*1024*1024</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(376, 152)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>average_size</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>256</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(720, 252)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>packet_limit</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>Total_sample/average_size/spp</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(536, 156)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>packet_shift</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>8</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(64, 116)</value>
     </param>
     <param>
@@ -118,6 +226,33 @@
     <param>
       <key>value</key>
       <value>200e6</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(488, 228)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>spp</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>44</value>
     </param>
   </block>
   <block>
@@ -364,19 +499,19 @@
     </param>
     <param>
       <key>packet_avg_size</key>
-      <value>256</value>
+      <value>average_size</value>
     </param>
     <param>
       <key>packet_limit</key>
-      <value>65536</value>
+      <value>packet_limit</value>
     </param>
     <param>
       <key>packet_shift</key>
-      <value>8</value>
+      <value>packet_shift</value>
     </param>
     <param>
       <key>spp_shift</key>
-      <value>7</value>
+      <value>spp</value>
     </param>
   </block>
   <block>
@@ -525,11 +660,11 @@
     </param>
     <param>
       <key>freq</key>
-      <value>105.7e6</value>
+      <value>2.4e9</value>
     </param>
     <param>
       <key>rx_bandwidth0</key>
-      <value>56e3</value>
+      <value>56e4</value>
     </param>
     <param>
       <key>ant0</key>
@@ -641,7 +776,7 @@
     </param>
     <param>
       <key>stream_args</key>
-      <value>spp = 128</value>
+      <value>spp = 44</value>
     </param>
   </block>
   <connection>

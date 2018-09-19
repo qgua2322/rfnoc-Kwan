@@ -105,7 +105,7 @@ module noc_block_Latencytest_tb();
     // back exactly what we send
     `TEST_CASE_START("Test sequence");
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, 6);
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_LIMIT, 10);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_LIMIT, 100);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_AVG_SIZE, 64);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_SHIFT, 6);
     tb_streamer.write_user_reg(sid_noc_block_radio_core_modified, noc_block_radio_core_modified.SR_RX_CTRL_MAXLEN, 32'(SPP),0);
@@ -115,7 +115,7 @@ module noc_block_Latencytest_tb();
 
     $display("Start simulation");
     
-    #500000;
+    #5000000;
     
     `TEST_CASE_DONE(1);
     `TEST_BENCH_DONE;
