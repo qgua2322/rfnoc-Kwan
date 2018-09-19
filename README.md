@@ -2,7 +2,7 @@
 Integrating UHD and fpga files into one directory
 
 IP block: noc_block_Latencytest.v  
-Usetage: Report aveage sample latency and packet latency (Both average window can be set by setting register)
+Usetage: Report aveage packet latency (Average window can be set by setting register)
 
 # Install
 
