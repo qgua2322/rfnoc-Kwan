@@ -339,21 +339,6 @@ module latencyReport #(
   localparam [2:0] ST_SEND_PACKET_LATENCY = 3'b100;
 
 
-  //Debug wire
-  (* dont_touch = "true",mark_debug ="true" *) wire m_axis_data_tlast_debug = m_axis_data_tlast;
-  (* dont_touch = "true",mark_debug ="true" *) wire m_axis_data_tvalid_debug = m_axis_data_tvalid;
-  (* dont_touch = "true",mark_debug ="true" *) wire [64:0] time_diff = (syn_timekeeper - header_timestamp);
-  (* dont_touch = "true",mark_debug ="true" *) wire packet_overflow = ((time_diff > 5000) & second_round)? 1:0;
-  (* dont_touch = "true",mark_debug ="true" *) wire packet_underflow = ((time_diff < MIN_LATENCY) & second_round )? 1:0;
-  (* dont_touch = "true",mark_debug ="true" *) wire header_length_underflow_debug = (m_axis_data_tuser[111:96] < SPP_SIZE*4) ? 1: 0;
-  (* dont_touch = "true",mark_debug ="true" *) wire last_packet_underflow = ((last_avg_packet_latency < MIN_LATENCY) & second_round) ? 1:0;
-  (* dont_touch = "true",mark_debug ="true" *) wire [15:0] packet_counter_debug = packet_counter;
-  (* dont_touch = "true",mark_debug ="true" *) wire [4:0] fsm_count_state_debug =  fsm_count_state; 
-  (* dont_touch = "true",mark_debug ="true" *) wire [4:0] next_count_state_debug =  next_count_state; 
-  (* dont_touch = "true",mark_debug ="true" *) wire [15:0] header_length_debug = m_axis_data_tuser[111:96];
-  (* dont_touch = "true",mark_debug ="true" *) wire [3:0] header_type_debug = m_axis_data_tuser[127:124];
-  (* dont_touch = "true",mark_debug ="true" *) wire [64:0] last_avg_packet_latency_debug = last_avg_packet_latency;
-  (* dont_touch = "true",mark_debug ="true" *) wire [64:0] avg_packet_latency_debug = avg_packet_latency;
 
   always @(posedge ce_clk or negedge ce_rst ) begin
     if(ce_rst) begin
@@ -363,12 +348,13 @@ module latencyReport #(
     end
   end 
   
+  wire slow_tready,fast_valid;
+  axi_fifo_2clk #(.WIDTH(64), .SIZE(5)) sync_fifo (
+    .i_aclk(radio_clk), .o_aclk(ce_clk), .reset(radio_rst),
+    .i_tdata({timekeeper}), .i_tvalid(1), .i_tready(slow_tready),
+    .o_tdata({syn_timekeeper}), .o_tvalid(fast_valid), .o_tready(1)
+  );
   
-  slow2fast_syn #(.DATA_LENGTH(64))
-    slow2fast_syn(
-      .slow_clk(radio_clk), .fast_clk(ce_clk),
-      .slow_data(timekeeper), .fast_data(syn_timekeeper)
-    );
   
   //Counting FSM
   //Conditional state transistion
@@ -425,6 +411,7 @@ module latencyReport #(
       avg_packet_latency <= 65'h0;
       packet_counter <= 16'h0; 
       packet_limit_counter <= 32'h0;
+      last_avg_packet_latency <= 64'h0;
     end else begin
       case(fsm_count_state)
         ST_COUNT_IDLE: begin
@@ -440,7 +427,7 @@ module latencyReport #(
         end
 
         ST_WAITING_TLAST: begin
-          if (m_axis_data_tvalid  == 1'b1 & m_axis_data_tlast  == 1'b1) begin   
+          if (m_axis_data_tvalid  == 1'b1 & m_axis_data_tlast  == 1'b1 ) begin   
             if ((packet_counter +1) == PACKET_AVG_SIZE) begin
                 ready2send <= 1;
                 packet_limit_counter <=  packet_limit_counter + 1;
@@ -521,38 +508,9 @@ module latencyReport #(
   end
 
   assign s_axis_data_tlast = (fsm_send_state == ST_SEND_PACKET_LATENCY) ? 1:0;
-  assign s_axis_data_tvalid = ((fsm_send_state == ST_SEND_MARKER) | (fsm_send_state == ST_SEND_PACKET_LATENCY)) ? 1:0;
+  assign s_axis_data_tvalid = (((fsm_send_state == ST_SEND_MARKER) | (fsm_send_state == ST_SEND_PACKET_LATENCY)) & s_axis_data_tready) ? 1:0;
   assign s_axis_data_tdata =  (fsm_send_state == ST_SEND_PACKET_LATENCY) ? last_avg_packet_latency[31:0] : (fsm_send_state == ST_SEND_MARKER) ? 32'habcdbeef:0 ;
   assign m_axis_data_tready =  1;
   assign s_axis_data_tuser = {header,syn_timekeeper[63:0]};     
 endmodule
 
-
-module slow2fast_syn #(
-  parameter DATA_LENGTH = 64
-)(
-  input slow_clk, input fast_clk,
-  input [DATA_LENGTH-1:0] slow_data,
-  output [DATA_LENGTH-1:0] fast_data
-);
-
-  reg slow_clk_reg1;
-  reg slow_clk_reg2;
-  reg slow_clk_reg3;
-  reg [DATA_LENGTH-1:0] output_reg;
-  wire [DATA_LENGTH-1:0] input_mux;
-
-  always @(posedge fast_clk) begin
-    slow_clk_reg1 <= slow_clk;
-    slow_clk_reg2 <= slow_clk_reg1;
-    slow_clk_reg3 <= slow_clk_reg2;
-  end
-
-  assign input_mux = (slow_clk_reg3) ? slow_data : output_reg;
-
-  always @(posedge fast_clk) begin
-    output_reg <= input_mux;
-  end
-
-  assign fast_data = output_reg;
-endmodule

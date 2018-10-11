@@ -159,7 +159,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(720, 252)</value>
+      <value>(616, 100)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -240,7 +240,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(488, 228)</value>
+      <value>(488, 92)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -252,7 +252,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>44</value>
+      <value>256</value>
     </param>
   </block>
   <block>
@@ -412,7 +412,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(592, 320)</value>
+      <value>(784, 328)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -471,7 +471,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(320, 288)</value>
+      <value>(528, 296)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -510,7 +510,7 @@
       <value>packet_shift</value>
     </param>
     <param>
-      <key>spp_shift</key>
+      <key>spp_size</key>
       <value>spp</value>
     </param>
   </block>
@@ -605,7 +605,7 @@
     </param>
     <param>
       <key>otw</key>
-      <value>u8</value>
+      <value>sc16</value>
     </param>
     <param>
       <key>device_index</key>
@@ -613,7 +613,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>block_index</key>
@@ -625,11 +625,11 @@
     </param>
     <param>
       <key>grvlen</key>
-      <value>8</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 76)</value>
+      <value>(280, 316)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -637,7 +637,7 @@
     </param>
     <param>
       <key>type</key>
-      <value>u8</value>
+      <value>fc32</value>
     </param>
     <param>
       <key>id</key>
@@ -776,7 +776,7 @@
     </param>
     <param>
       <key>stream_args</key>
-      <value>spp = 44</value>
+      <value>spp =256</value>
     </param>
   </block>
   <connection>
@@ -792,8 +792,14 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>uhd_rfnoc_streamer_radio_0</source_block_id>
+    <source_block_id>uhd_rfnoc_streamer_fifo_0</source_block_id>
     <sink_block_id>kwan_cross_Latencytest_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>uhd_rfnoc_streamer_radio_0</source_block_id>
+    <sink_block_id>uhd_rfnoc_streamer_fifo_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

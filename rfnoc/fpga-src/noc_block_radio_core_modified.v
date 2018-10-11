@@ -16,6 +16,7 @@ module noc_block_radio_core_modified #(
 )(
   input bus_clk, input bus_rst,
   input ce_clk, input ce_rst,
+  input radio_clk, input radio_rst,
   input  [63:0] i_tdata, input  i_tlast, input  i_tvalid, output i_tready,
   output [63:0] o_tdata, output o_tlast, output o_tvalid, input  o_tready,
   // Output timed settings bus, one per radio
@@ -26,7 +27,7 @@ module noc_block_radio_core_modified #(
   output [NUM_CHANNELS*32-1:0] tx, input [NUM_CHANNELS-1:0] tx_stb, output [NUM_CHANNELS-1:0] tx_running,
   // Interfaces to front panel and daughter board
   input pps, input sync_in, output sync_out,
-  output [63:0] debug ,output [63:0] shared_time 
+  output [63:0] debug ,output [63:0] timekeeper_share 
 );
 
   //Output debug wire
@@ -78,7 +79,7 @@ module noc_block_radio_core_modified #(
     .i_tdata(i_tdata), .i_tlast(i_tlast), .i_tvalid(i_tvalid), .i_tready(i_tready),
     .o_tdata(o_tdata), .o_tlast(o_tlast), .o_tvalid(o_tvalid), .o_tready(o_tready),
     // Compute Engine Clock Domain
-    .clk(ce_clk), .reset(ce_rst),
+    .clk(radio_clk), .reset(radio_rst),
     // Control Sink
     .set_data(set_data), .set_addr(set_addr), .set_stb(set_stb), .set_time(), .set_has_time(),
     .rb_stb(rb_stb), .rb_addr(rb_addr), .rb_data(rb_data),
@@ -122,7 +123,7 @@ module noc_block_radio_core_modified #(
   // Radio response packet mux
   axi_mux  #(.WIDTH(64), .PRE_FIFO_SIZE(0), .POST_FIFO_SIZE(1), .SIZE(NUM_CHANNELS))
   axi_mux_cmd (
-    .clk(ce_clk), .reset(ce_rst), .clear(1'b0),
+    .clk(radio_clk), .reset(radio_rst), .clear(1'b0),
     .i_tdata(resp_tdata), .i_tlast(resp_tlast), .i_tvalid(resp_tvalid), .i_tready(resp_tready),
     .o_tdata(cmdout_tdata), .o_tlast(cmdout_tlast), .o_tvalid(cmdout_tvalid), .o_tready(cmdout_tready)
   );
@@ -136,7 +137,7 @@ module noc_block_radio_core_modified #(
     .DWIDTH(32),
     .NUM_BUSES(NUM_CHANNELS))
   settings_bus_mux (
-    .clk(ce_clk), .reset(ce_rst), .clear(1'b0),
+    .clk(radio_clk), .reset(radio_rst), .clear(1'b0),
     .in_set_stb(set_stb), .in_set_addr(set_addr), .in_set_data(set_data),
     .out_set_stb(set_stb_mux), .out_set_addr(set_addr_mux), .out_set_data(set_data_mux), .ready(1'b1)
   );
@@ -147,7 +148,7 @@ module noc_block_radio_core_modified #(
 
 
     reg start_count = 1'b0;
-    always @(posedge ce_clk) begin
+    always @(posedge radio_clk) begin
       if(s_axis_data_tlast[0] == 1'b1 & start_count == 1'b0) begin
         start_count <= 1'b1;
       end
@@ -155,7 +156,7 @@ module noc_block_radio_core_modified #(
     
   //debug timekeeper;
   reg [63:0] simple_counter = 64'h0;
-  always @(posedge ce_clk ) begin 
+  always @(posedge radio_clk ) begin 
     if (start_count == 1'b1) begin
       simple_counter <= simple_counter+1;
     end
@@ -165,13 +166,13 @@ module noc_block_radio_core_modified #(
   // VITA time is shared between radio cores
   `include "radio_core_regs.vh"
   wire [63:0] vita_time_lastpps;
-  assign shared_time = vita_time;
+  assign timekeeper_share = vita_time;
   timekeeper #(
     .SR_TIME_HI(SR_TIME_HI),
     .SR_TIME_LO(SR_TIME_LO),
     .SR_TIME_CTRL(SR_TIME_CTRL))
   timekeeper (
-    .clk(ce_clk), .reset(ce_rst), .pps(pps), .sync_in(sync_in), .strobe(rx_stb_debug[0]),
+    .clk(radio_clk), .reset(radio_rst), .pps(pps), .sync_in(sync_in), .strobe(rx_stb_debug[0]),
     .set_stb(set_stb_mux), .set_addr(set_addr_mux), .set_data(set_data_mux),
     .vita_time(vita_time), .vita_time_lastpps(vita_time_lastpps),
     .sync_out(sync_out)
@@ -208,7 +209,7 @@ module noc_block_radio_core_modified #(
         .USE_SEQ_NUM(1))
       axi_wrapper (
         .bus_clk(bus_clk), .bus_rst(bus_rst),
-        .clk(ce_clk), .reset(ce_rst),
+        .clk(radio_clk), .reset(radio_rst),
         .clear_tx_seqnum(clear_tx_seqnum[i]),
         .next_dst(next_dst_sid[16*i+15:16*i]),
         .set_stb(1'b0), .set_addr(8'd0), .set_data(32'd0),
@@ -238,7 +239,7 @@ module noc_block_radio_core_modified #(
       radio_datapath_core_modified #(
         .RADIO_NUM(i)
       ) radio_datapath_core_modified_i (
-        .clk(ce_clk), .reset(ce_rst),
+        .clk(radio_clk), .reset(radio_rst),
         .clear_rx(clear_tx_seqnum[i]), .clear_tx(clear_tx_seqnum[i]),
         .src_sid(src_sid[16*i+15:16*i]),
         .dst_sid(next_dst_sid[16*i+15:16*i]),

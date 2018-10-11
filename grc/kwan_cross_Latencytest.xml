@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>RFNoC: Latencytest</name>
+  <name>RFNoC: LatencyReport</name>
   <key>kwan_cross_Latencytest</key>
   <category>kwan_cross</category>
   <import>import kwan_cross</import>

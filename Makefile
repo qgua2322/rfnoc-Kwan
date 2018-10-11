@@ -21,7 +21,7 @@ compile:
 	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos)
 
 compile-debug:
-	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest --GUI -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/)
+	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest --GUI -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/ -d x310 -t X310_RFNOC_HG -m 3  --fill-with-fifos)
 
 compile--clean-all:
 	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py Latencytest -I $(RFNOC_PATH)/src/rfnoc-kwan_cross/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos --clean-all)

@@ -27,15 +27,16 @@
 
 module noc_block_Latencytest_tb();
   `TEST_BENCH_INIT("noc_block_Latencytest",`NUM_TEST_CASES,`NS_PER_TICK);
-  localparam BUS_CLK_PERIOD = $ceil(1e9/166.67e6);
-  localparam CE_CLK_PERIOD  = $ceil(1e9/200e6);
+  localparam BUS_CLK_PERIOD = $ceil(1e9/187.5e6);
+  localparam CE_CLK_PERIOD  = $ceil(1e9/225e6);
+  localparam RADIO_CLK_PERIOD = $ceil(1e9/200e6);
   localparam NUM_CE         = 2;  // Number of Computation Engines / User RFNoC blocks to simulate
   localparam NUM_STREAMS    = 1;  // Number of test bench streams
-  `RFNOC_SIM_INIT(NUM_CE, NUM_STREAMS, BUS_CLK_PERIOD, CE_CLK_PERIOD);
+  `RFNOC_SIM_INIT(NUM_CE, NUM_STREAMS, BUS_CLK_PERIOD, CE_CLK_PERIOD,RADIO_CLK_PERIOD);
   `RFNOC_ADD_BLOCK(noc_block_radio_core_modified, 0);
   `RFNOC_ADD_BLOCK(noc_block_Latencytest, 1);
 
-  localparam SPP = 64; // Samples per packet
+  localparam SPP = 128; // Samples per packet
 
   /********************************************************
   ** Verification
@@ -86,7 +87,7 @@ module noc_block_Latencytest_tb();
     ********************************************************/
     `TEST_CASE_START("Write / readback user registers");
     random_word = $random();
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, random_word);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SIZE, random_word);
     tb_streamer.read_user_reg(sid_noc_block_Latencytest, 0, readback);
     $sformat(s, "User SPP_SHIFT_REG incorrect readback! Expected: %0d, Actual %0d", readback[31:0], random_word);
     `ASSERT_ERROR(readback[31:0] == random_word, s);
@@ -104,7 +105,7 @@ module noc_block_Latencytest_tb();
     // Latencytest's user code is a loopback, so we should receive
     // back exactly what we send
     `TEST_CASE_START("Test sequence");
-    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SHIFT, 6);
+    tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_SPP_SIZE, 128);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_LIMIT, 100);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_AVG_SIZE, 64);
     tb_streamer.write_user_reg(sid_noc_block_Latencytest, noc_block_Latencytest.SR_PACKET_SHIFT, 6);
