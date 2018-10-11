@@ -23,5 +23,7 @@
 install(FILES
     api.h
     latencytest.h
-    latencytest_block_ctrl.hpp DESTINATION include/Kwan
+    latencytest_block_ctrl.hpp
+    latencytest2.h
+    latencytest2_block_ctrl.hpp DESTINATION include/Kwan
 )

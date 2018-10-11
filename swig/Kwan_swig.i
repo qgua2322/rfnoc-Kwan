@@ -16,7 +16,10 @@
 #include "ettus/device3.h"
 #include "ettus/rfnoc_block_impl.h"
 #include "Kwan/latencytest.h"
+#include "Kwan/latencytest2.h"
 %}
 
 %include "Kwan/latencytest.h"
 GR_SWIG_BLOCK_MAGIC2(Kwan, latencytest);
+%include "Kwan/latencytest2.h"
+GR_SWIG_BLOCK_MAGIC2(Kwan, latencytest2);

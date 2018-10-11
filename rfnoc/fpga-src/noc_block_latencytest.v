@@ -26,10 +26,11 @@ module noc_block_latencytest #(
   parameter MTU = 8'd10)
 (
   input bus_clk, input bus_rst,
+  input radio_clk, input radio_rst,
   input ce_clk, input ce_rst,
   input  [63:0] i_tdata, input  i_tlast, input  i_tvalid, output i_tready,
   output [63:0] o_tdata, output o_tlast, output o_tvalid, input  o_tready,
-  output [31:0] leds_test, input [63:0] vita_time_input, output [63:0] debug
+  output [63:0] debug, output  [63:0] timekeeper_share 
 );
 
   ////////////////////////////////////////////////////////////
@@ -57,17 +58,8 @@ module noc_block_latencytest #(
 
 
   //Timestamper wire
-  reg [63:0] outcoming_axi_timestamp = 64'h0;
-  reg [63:0] incoming_axi_timestamp = 64'h0;
-  reg [63:0] incoming_ip_timestamp = 64'h0;
-  reg [63:0] outcoming_ip_timestamp = 64'h0;
-  wire [32:0] str_sink_tdata_temp;
-  wire [32:0] m_axis_data_tdata_temp;
-  wire [32:0] s_axis_data_tdata_temp;
-  wire [63:0] str_src_tdata_temp;
   wire [63:0] o_tdata_temp;
   reg [63:0] simple_counter = 64'h0;
-  reg [63:0] simple_counter_shift32  = 64'h0;
 
   always @(posedge ce_clk ) begin 
     if (i_tdata == 64'habcdbeefdeadbeef) begin
@@ -77,8 +69,17 @@ module noc_block_latencytest #(
     end
   end
 
-  assign o_tdata = (o_tdata_temp[63:32] == 32'habcdbeef) ?  {simple_counter[31:0],o_tdata_temp[31:0] }:o_tdata_temp ;
-  assign str_src_tdata = (str_src_tdata_temp[63:32] == 32'habcdbeef) ? {str_src_tdata_temp[63:32],simple_counter[31:0]} :str_src_tdata_temp ;
+  assign timekeeper_share = simple_counter;
+
+  Timestamper #(
+   .MAKER(32'habcdbeef),
+   .POSITION(1)
+  )Timestamper1 (
+    .i_tdata(o_tdata_temp), .switch_on(1),
+    .counter(simple_counter), .o_tdata(o_tdata)
+  );
+
+  
 
   noc_shell #(
     .NOC_ID(NOC_ID),
@@ -91,7 +92,7 @@ module noc_block_latencytest #(
     // Computer Engine Clock Domain
     .clk(ce_clk), .reset(ce_rst),
     // Control Sink
-    .set_data(set_data), .set_addr(set_addr), .set_stb(set_stb),
+    .set_data(set_data), .set_addr(set_addr), .set_stb(set_stb), .set_time(), .set_has_time(),
     .rb_stb(1'b1), .rb_data(rb_data), .rb_addr(rb_addr),
     // Control Source
     .cmdout_tdata(cmdout_tdata), .cmdout_tlast(cmdout_tlast), .cmdout_tvalid(cmdout_tvalid), .cmdout_tready(cmdout_tready),
@@ -132,11 +133,12 @@ module noc_block_latencytest #(
     .SIMPLE_MODE(0))
   axi_wrapper (
     .clk(ce_clk), .reset(ce_rst),
+    .bus_clk(bus_clk), .bus_rst(bus_rst),
     .clear_tx_seqnum(clear_tx_seqnum),
     .next_dst(next_dst_sid),
     .set_stb(set_stb), .set_addr(set_addr), .set_data(set_data),
     .i_tdata(str_sink_tdata), .i_tlast(str_sink_tlast), .i_tvalid(str_sink_tvalid), .i_tready(str_sink_tready),
-    .o_tdata(str_src_tdata_temp), .o_tlast(str_src_tlast), .o_tvalid(str_src_tvalid), .o_tready(str_src_tready),
+    .o_tdata(str_src_tdata), .o_tlast(str_src_tlast), .o_tvalid(str_src_tvalid), .o_tready(str_src_tready),
     .m_axis_data_tdata(m_axis_data_tdata),
     .m_axis_data_tlast(m_axis_data_tlast),
     .m_axis_data_tvalid(m_axis_data_tvalid),
@@ -308,8 +310,21 @@ module shiftRegiste_4 #(
   assign s_axis_data_tvalid = reg4[PACKET_LENGTH];
   assign s_axis_data_tdata = reg4[PACKET_LENGTH-1:0];
   assign m_axis_data_tready = s_axis_data_tready;
-  assign s_axis_data_tuser = {header,32'h0,timer[31:0]};     
+  assign s_axis_data_tuser = {header,timer[63:0]};     
 endmodule
 
+module Timestamper #(
+  parameter MAKER = 32'habcdbeef,
+  parameter POSITION = 1
+)(
+  input [63:0] i_tdata,input switch_on,
+  input [63:0] counter,output [63:0] o_tdata
+);
+
+  wire [63:0] first = {i_tdata[63:32],counter[31:0]};
+  wire [63:0] second  = {counter[31:0], i_tdata[31:0]};
+  assign o_tdata = (i_tdata[63:32] == MAKER) ?  ((POSITION == 1 ) ? first:second):i_tdata ;
 
 
+
+endmodule

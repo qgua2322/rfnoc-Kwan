@@ -10,7 +10,7 @@ int main(void){
         exit(1);
     }
 
-    int NumPacket = 10000;
+    int NumPacket = 50000;
     int * outs = (int*) malloc ((NumPacket+1)*2*sizeof(int));
     
     outs[0] = 0xabcdbeef;

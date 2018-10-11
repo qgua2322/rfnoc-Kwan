@@ -1,3 +1,4 @@
 $(addprefix SOURCES_PATH, \
+noc_block_latencytest2.v \
 noc_block_latencytest.v \
 ) \

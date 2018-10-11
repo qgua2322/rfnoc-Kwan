@@ -23,7 +23,7 @@ install:
 	make install	
 
 compile:
-	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest -I $(RFNOC_PATH)/src/rfnoc-Kwan/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos)
+	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest latencytest2 -I $(RFNOC_PATH)/src/rfnoc-Kwan/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos -g)
 
 compile-all:
 	(cd ~/rfnoc/src/uhd-fpga/usrp3/tools/scripts && python uhd_image_builder.py latencytest -I $(RFNOC_PATH)/src/rfnoc-Kwan/ -d x310 -t X310_RFNOC_HG -m 2  --fill-with-fifos --clean-all)
@@ -33,6 +33,12 @@ sim:
 
 download:
 	uhd_image_loader --args "type=x300,addr=192.168.10.2" --fpga-path ./usrp_x310_fpga_RFNOC_HG.bit
+
+download-project:
+	uhd_image_loader --args "type=x300,addr=192.168.10.2" --fpga-path ./xilinx-project/project_1/project_1.run/impl_1/x300.bit
+
+download-clean:
+	uhd_image_loader --args "type=x300,addr=192.168.10.2" --fpga-path ./usrp_x310_fpga_HG.bit
 
 detect:
 	uhd_usrp_probe

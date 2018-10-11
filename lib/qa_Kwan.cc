@@ -27,12 +27,14 @@
 
 #include "qa_Kwan.h"
 #include "qa_latencytest.h"
+#include "qa_latencytest2.h"
 
 CppUnit::TestSuite *
 qa_Kwan::suite()
 {
   CppUnit::TestSuite *s = new CppUnit::TestSuite("Kwan");
   s->addTest(gr::Kwan::qa_latencytest::suite());
+  s->addTest(gr::Kwan::qa_latencytest2::suite());
 
   return s;
 }

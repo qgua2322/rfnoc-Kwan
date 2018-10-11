@@ -28,6 +28,8 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND Kwan_sources
     latencytest_impl.cc
     latencytest_block_ctrl_impl.cpp
+    latencytest2_impl.cc
+    latencytest2_block_ctrl_impl.cpp
 )
 
 
@@ -66,6 +68,7 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 list(APPEND test_Kwan_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_Kwan.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_Kwan.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_latencytest2.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_latencytest.cc
 )
 
